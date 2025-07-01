@@ -1,0 +1,20 @@
+# 데이터 처리 및 엑셀 파일 작업
+pandas==2.2.3
+
+# Google Gemini AI API
+google-genai==1.21.1
+
+# 데이터 검증 및 타입 힌트
+pydantic==2.11.7
+
+# 환경변수 관리
+python-dotenv==1.1.1
+
+# 엑셀 파일 읽기/쓰기 지원 (pandas 백엔드)
+openpyxl==3.1.5
+
+# 수치 계산 라이브러리 (pandas 의존성)
+numpy==2.2.4
+
+# HTTP 요청 라이브러리 (API 호출용)
+requests==2.32.4 
