@@ -1,14 +1,19 @@
 import pandas as pd
 import json
 import re
+from logger_config import get_logger
+
+# 로거 설정
+logger = get_logger("save_excel")
 
 
 def parse_industry_data_with_gemini(response_text):
     """
     Gemini API 응답을 파싱하여 표준 형태로 변환하는 함수
     """
-
-    # print("response_text: ", response_text)
+    
+    logger.info("Gemini API 응답 데이터 파싱 시작")
+    logger.debug(f"응답 텍스트 길이: {len(str(response_text))}")
     try:
         # JSON 문자열을 파싱
         if isinstance(response_text, str):
@@ -71,11 +76,11 @@ def parse_industry_data_with_gemini(response_text):
                             except json.JSONDecodeError as e:
                                 print(f"references 파싱 오류: {e}")
                         
-                        # print("파싱된 결과:")
-                        # print(f"국내 시장 규모: {result['market_size']['국내']}")
-                        # print(f"해외 시장 규모: {result['market_size']['해외']}")
-                        # print(f"국내 참고자료: {result['references']['국내']}")
-                        # print(f"해외 참고자료: {result['references']['해외']}")
+                        logger.info("새로운 Gemini 응답 형태 파싱 완료")
+                        logger.debug(f"국내 시장 규모: {result['market_size']['국내']}")
+                        logger.debug(f"해외 시장 규모: {result['market_size']['해외']}")
+                        logger.debug(f"국내 참고자료: {result['references']['국내']}")
+                        logger.debug(f"해외 참고자료: {result['references']['해외']}")
                         
                         return result
                     else:
@@ -93,7 +98,7 @@ def parse_industry_data_with_gemini(response_text):
         else:
             return response_text
     except Exception as e:
-        print(f"데이터 파싱 중 오류 발생: {e}")
+        logger.error(f"데이터 파싱 중 오류 발생: {e}")
         return None
 
 def find_item_row(excel_file_path, item_name, column_name='Unnamed: 1'):
@@ -108,27 +113,28 @@ def find_item_row(excel_file_path, item_name, column_name='Unnamed: 1'):
     Returns:
         int or None: 찾은 행의 인덱스 (0부터 시작), 없으면 None
     """
+    logger.info(f"엑셀 파일에서 '{item_name}' 항목 검색 시작: {excel_file_path}")
     try:
         df = pd.read_excel(excel_file_path)
         
         # B열 존재 여부 확인
         if column_name not in df.columns:
-            print(f"오류: '{column_name}' 열이 존재하지 않습니다.")
-            print(f"사용 가능한 열: {df.columns.tolist()}")
+            logger.error(f"'{column_name}' 열이 존재하지 않습니다.")
+            logger.error(f"사용 가능한 열: {df.columns.tolist()}")
             return None
         
         # B열에서 물품명과 일치하는 행 찾기
         item_rows = df[df[column_name] == item_name]
         if not item_rows.empty:
             found_index = item_rows.index[0]  # 첫 번째 매칭 행의 인덱스 반환
-            print(f"'{item_name}' 항목을 B열의 {found_index + 1}행에서 찾았습니다.")
+            logger.info(f"'{item_name}' 항목을 B열의 {found_index + 1}행에서 찾았습니다.")
             return found_index
         else:
-            print(f"'{item_name}' 항목을 B열에서 찾을 수 없습니다.")
+            logger.warning(f"'{item_name}' 항목을 B열에서 찾을 수 없습니다.")
             return None
             
     except Exception as e:
-        print(f"B열에서 항목 찾기 중 오류 발생: {e}")
+        logger.error(f"B열에서 항목 찾기 중 오류 발생: {e}")
         return None
 
 
@@ -146,16 +152,18 @@ def save_to_excel(excel_file_path, row_index, item_name, parsed_json_data):
         bool: 저장 성공 여부
     """
     
+    logger.info(f"'{item_name}' 데이터를 엑셀 파일 {row_index + 1}행에 저장 시작")
     
     # 엑셀 파일 읽기
+    logger.debug(f"엑셀 파일 읽기: {excel_file_path}")
     df = pd.read_excel(excel_file_path)
 
     data = parse_industry_data_with_gemini(parsed_json_data)
 
-    # print("data: ", data)
+    logger.debug(f"파싱된 데이터: {data}")
 
     if data is None:
-        print("데이터 파싱에 완전히 실패했습니다.")
+        logger.error("데이터 파싱에 완전히 실패했습니다.")
         return False
     
     # 열 이름 정의
@@ -214,11 +222,11 @@ def save_to_excel(excel_file_path, row_index, item_name, parsed_json_data):
         
         # 엑셀 파일 저장
         df.to_excel(excel_file_path, index=False)
-        print(f"'{item_name}' 데이터가 {row_index + 1}행에 성공적으로 저장되었습니다.")
+        logger.info(f"'{item_name}' 데이터가 {row_index + 1}행에 성공적으로 저장되었습니다.")
         return True
         
     except Exception as e:
-        print(f"엑셀 파일 저장 중 오류 발생: {e}")
+        logger.error(f"엑셀 파일 저장 중 오류 발생: {e}")
         return False
 
 
