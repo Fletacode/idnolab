@@ -3,6 +3,7 @@ import time
 import os
 import json
 from save_excel import save_to_excel
+from save_excel2 import save_to_excel_v2
 from google import genai
 from google.genai import types
 from pydantic import BaseModel
@@ -96,8 +97,8 @@ if __name__ == "__main__":
                 # result = get_industry_data_with_gemini(item)
                 # data = parse_industry_data_with_gemini(result)
                 data = PerplexityMarketResearch().research_parse(item)
-                print("data: ", data)
-                save_to_excel(excel_file_path, item, data)
+                
+                save_to_excel_v2(excel_file_path, item, data)
                 logger.info(f"{item} 엑셀 저장 완료")
             
                 # API 호출 간격 조절 (요청 제한 방지)

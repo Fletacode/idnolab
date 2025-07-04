@@ -114,20 +114,23 @@ def save_to_excel_v2(excel_file_path, item_name, data):
             if '국내' in data['market_size']:
                 domestic_market = data['market_size']['국내']
                 for year in ['2022', '2023', '2024']:
-                    if year in domestic_market and domestic_market[year]:
-                        column_name = f'국내 산업규모 ({year})'
-                        # 이제 열이 항상 존재하므로 조건문 제거
-                        df.loc[row_index, column_name] = str(domestic_market[year])
-                        logger.debug(f"저장됨: {column_name} = {domestic_market[year]}")
+                    if year in domestic_market:
+                        value = domestic_market[year]
+                        if value is not None and str(value).strip() not in ['', 'None', 'null', 'none']:
+                            column_name = f'국내 산업규모 ({year})'
+                            df.loc[row_index, column_name] = str(value)
+                            logger.debug(f"저장됨: {column_name} = {value}")
             
             # 해외 시장 규모
             if '해외' in data['market_size']:
                 overseas_market = data['market_size']['해외']
                 for year in ['2022', '2023', '2024']:
-                    if year in overseas_market and overseas_market[year]:
-                        column_name = f'해외 산업규모 ({year})'
-                        df.loc[row_index, column_name] = str(overseas_market[year])
-                        logger.debug(f"저장됨: {column_name} = {overseas_market[year]}")
+                    if year in overseas_market:
+                        value = overseas_market[year]
+                        if value is not None and str(value).strip() not in ['', 'None', 'null', 'none']:
+                            column_name = f'해외 산업규모 ({year})'
+                            df.loc[row_index, column_name] = str(value)
+                            logger.debug(f"저장됨: {column_name} = {value}")
         
         # 2. 추정 여부 데이터 저장
         if 'isEstimated' in data:
@@ -135,19 +138,25 @@ def save_to_excel_v2(excel_file_path, item_name, data):
             if '국내' in data['isEstimated']:
                 domestic_estimated = data['isEstimated']['국내']
                 for year in ['2022', '2023', '2024']:
-                    if year in domestic_estimated and domestic_estimated[year]:
-                        column_name = f'국내 추정여부 ({year})'
-                        df.loc[row_index, column_name] = str(domestic_estimated[year])
-                        logger.debug(f"저장됨: {column_name} = {domestic_estimated[year]}")
+                    if year in domestic_estimated:
+                        value = domestic_estimated[year]
+                        # 값이 존재하고 비어있지 않은 경우에만 저장
+                        if value is not None and str(value).strip() not in ['', 'None', 'null', 'none']:
+                            column_name = f'국내 추정여부 ({year})'
+                            df.loc[row_index, column_name] = str(value)
+                            logger.debug(f"저장됨: {column_name} = {value}")
             
             # 해외 추정 여부
             if '해외' in data['isEstimated']:
                 overseas_estimated = data['isEstimated']['해외']
                 for year in ['2022', '2023', '2024']:
-                    if year in overseas_estimated and overseas_estimated[year]:
-                        column_name = f'해외 추정여부 ({year})'
-                        df.loc[row_index, column_name] = str(overseas_estimated[year])
-                        logger.debug(f"저장됨: {column_name} = {overseas_estimated[year]}")
+                    if year in overseas_estimated:
+                        value = overseas_estimated[year]
+                        # 값이 존재하고 비어있지 않은 경우에만 저장
+                        if value is not None and str(value).strip() not in ['', 'None', 'null', 'none']:
+                            column_name = f'해외 추정여부 ({year})'
+                            df.loc[row_index, column_name] = str(value)
+                            logger.debug(f"저장됨: {column_name} = {value}")
         
         # 3. 추정 근거 데이터 저장
         if 'estimateReason' in data:
@@ -155,26 +164,30 @@ def save_to_excel_v2(excel_file_path, item_name, data):
             if '국내' in data['estimateReason']:
                 domestic_reason = data['estimateReason']['국내']
                 for year in ['2022', '2023', '2024']:
-                    if year in domestic_reason and domestic_reason[year]:
-                        column_name = f'국내 추정근거 ({year})'
-                        # 긴 텍스트는 200자로 제한
-                        reason_text = str(domestic_reason[year])
-                        if len(reason_text) > 200:
-                            reason_text = reason_text[:200] + "..."
-                        df.loc[row_index, column_name] = reason_text
-                        logger.debug(f"저장됨: {column_name} = {reason_text[:50]}...")
+                    if year in domestic_reason:
+                        value = domestic_reason[year]
+                        if value is not None and str(value).strip() not in ['', 'None', 'null', 'none']:
+                            column_name = f'국내 추정근거 ({year})'
+                            # 긴 텍스트는 200자로 제한
+                            reason_text = str(value)
+                            if len(reason_text) > 200:
+                                reason_text = reason_text[:200] + "..."
+                            df.loc[row_index, column_name] = reason_text
+                            logger.debug(f"저장됨: {column_name} = {reason_text[:50]}...")
             
             # 해외 추정 근거
             if '해외' in data['estimateReason']:
                 overseas_reason = data['estimateReason']['해외']
                 for year in ['2022', '2023', '2024']:
-                    if year in overseas_reason and overseas_reason[year]:
-                        column_name = f'해외 추정근거 ({year})'
-                        reason_text = str(overseas_reason[year])
-                        if len(reason_text) > 200:
-                            reason_text = reason_text[:200] + "..."
-                        df.loc[row_index, column_name] = reason_text
-                        logger.debug(f"저장됨: {column_name} = {reason_text[:50]}...")
+                    if year in overseas_reason:
+                        value = overseas_reason[year]
+                        if value is not None and str(value).strip() not in ['', 'None', 'null', 'none']:
+                            column_name = f'해외 추정근거 ({year})'
+                            reason_text = str(value)
+                            if len(reason_text) > 200:
+                                reason_text = reason_text[:200] + "..."
+                            df.loc[row_index, column_name] = reason_text
+                            logger.debug(f"저장됨: {column_name} = {reason_text[:50]}...")
         
         # 4. 참고자료(출처) 저장
         if 'references' in data:
@@ -182,26 +195,30 @@ def save_to_excel_v2(excel_file_path, item_name, data):
             if '국내' in data['references']:
                 domestic_refs = data['references']['국내']
                 for year in ['2022', '2023', '2024']:
-                    if year in domestic_refs and domestic_refs[year]:
-                        column_name = f'출처 (국내 {year})'
-                        # 참조 정보도 200자로 제한
-                        ref_text = str(domestic_refs[year])
-                        # if len(ref_text) > 200:
-                        #     ref_text = ref_text[:200] + "..."
-                        df.loc[row_index, column_name] = ref_text
-                        logger.debug(f"저장됨: {column_name} = {ref_text[:50]}...")
+                    if year in domestic_refs:
+                        value = domestic_refs[year]
+                        if value is not None and str(value).strip() not in ['', 'None', 'null', 'none']:
+                            column_name = f'출처 (국내 {year})'
+                            # 참조 정보도 200자로 제한
+                            ref_text = str(value)
+                            # if len(ref_text) > 200:
+                            #     ref_text = ref_text[:200] + "..."
+                            df.loc[row_index, column_name] = ref_text
+                            logger.debug(f"저장됨: {column_name} = {ref_text[:50]}...")
             
             # 해외 참고자료
             if '해외' in data['references']:
                 overseas_refs = data['references']['해외']
                 for year in ['2022', '2023', '2024']:
-                    if year in overseas_refs and overseas_refs[year]:
-                        column_name = f'출처 (해외 {year})'
-                        ref_text = str(overseas_refs[year])
-                        # if len(ref_text) > 200:
-                        #     ref_text = ref_text[:200] + "..."
-                        df.loc[row_index, column_name] = ref_text
-                        logger.debug(f"저장됨: {column_name} = {ref_text[:50]}...")
+                    if year in overseas_refs:
+                        value = overseas_refs[year]
+                        if value is not None and str(value).strip() not in ['', 'None', 'null', 'none']:
+                            column_name = f'출처 (해외 {year})'
+                            ref_text = str(value)
+                            # if len(ref_text) > 200:
+                            #     ref_text = ref_text[:200] + "..."
+                            df.loc[row_index, column_name] = ref_text
+                            logger.debug(f"저장됨: {column_name} = {ref_text[:50]}...")
         
         # 엑셀 파일 저장
         df.to_excel(excel_file_path, index=False)

@@ -5,12 +5,47 @@ import os
 from dotenv import load_dotenv
 from logger_config import get_logger
 from save_excel2 import save_to_excel_v2, find_item_row
+from pydantic import BaseModel
+from typing import Dict, Optional
 
 # 환경변수 로드
 load_dotenv()
 
 # 로거 설정
 logger = get_logger("perplexity_api")
+
+class YearlyData(BaseModel):
+    """연도별 데이터 모델"""
+    year_2022: str
+    year_2023: str
+    year_2024: str
+
+class MarketSizeData(BaseModel):
+    """시장 규모 데이터 모델"""
+    domestic: YearlyData  # 국내
+    overseas: YearlyData  # 해외
+
+class EstimatedData(BaseModel):
+    """추정 여부 데이터 모델"""
+    domestic: YearlyData  # 국내
+    overseas: YearlyData  # 해외
+
+class EstimateReasonData(BaseModel):
+    """추정 근거 데이터 모델"""
+    domestic: YearlyData  # 국내
+    overseas: YearlyData  # 해외
+
+class ReferencesData(BaseModel):
+    """참조 데이터 모델"""
+    domestic: YearlyData  # 국내
+    overseas: YearlyData  # 해외
+
+class MarketResearchResponse(BaseModel):
+    """시장 조사 응답 전체 모델"""
+    market_size: MarketSizeData
+    is_estimated: EstimatedData
+    estimate_reason: EstimateReasonData
+    references: ReferencesData
 
 class PerplexityMarketResearch:
     def __init__(self):
@@ -49,77 +84,81 @@ class PerplexityMarketResearch:
         prompt = f"""
         당신은 시장 분석 전문가입니다. '{item_name}' 제품/서비스의 시장 규모에 대한 정확한 데이터를 제공해주세요.
 
-        다음 JSON 형식으로 응답해주세요:
+        다음 정확한 JSON 스키마 형식으로 응답해주세요:
         {{
             "market_size": {{
-                "국내": {{
-                    "2022": "구체적인 금액 또는 추정값",
-                    "2023": "구체적인 금액 또는 추정값", 
-                    "2024": "구체적인 금액 또는 추정값"
+                "domestic": {{
+                    "year_2022": "구체적인 천원단위 숫자의 금액 또는 천원단위의 숫자의 추정값",
+                    "year_2023": "구체적인 천원단위 숫자의 금액 또는 천원단위의 숫자의 추정값", 
+                    "year_2024": "구체적인 천원단위 숫자의 금액 또는 천원단위의 숫자의 추정값"
                 }},
-                "해외": {{
-                    "2022": "구체적인 금액 또는 추정값",
-                    "2023": "구체적인 금액 또는 추정값",
-                    "2024": "구체적인 금액 또는 추정값"
+                "overseas": {{
+                    "year_2022": "구체적인 천원단위 숫자의 금액 또는 천원단위의 숫자의 추정값",
+                    "year_2023": "구체적인 천원단위 숫자의 금액 또는 천원단위의 숫자의 추정값",
+                    "year_2024": "구체적인 천원단위 숫자의 금액 또는 천원단위의 숫자의 추정값"
                 }}
             }},
-            "isEstimated":{{
-                "국내": {{
-                    "2022": "추정 | 실제금액",
-                    "2023": "추정 | 실제금액",
-                    "2024": "추정 | 실제금액"
+            "is_estimated": {{
+                "domestic": {{
+                    "year_2022": "True 또는 False",
+                    "year_2023": "True 또는 False",
+                    "year_2024": "True 또는 False"
                 }},
-                "해외": {{
-                    "2022": "추정 | 실제금액",
-                    "2023": "추정 | 실제금액",
-                    "2024": "추정 | 실제금액"
+                "overseas": {{
+                    "year_2022": "True 또는 False",x
+                    "year_2023": "True 또는 False",
+                    "year_2024": "True 또는 False"
                 }}
             }},
-            "estimateReason":{{
-                "국내": {{
-                    "2022": "추정 근거",
-                    "2023": "추정 근거",
-                    "2024": "추정 근거"
+            "estimate_reason": {{
+                "domestic": {{
+                    "year_2022": "추정 근거",
+                    "year_2023": "추정 근거",
+                    "year_2024": "추정 근거"
                 }},
-                "해외": {{
-                    "2022": "추정 근거",
-                    "2023": "추정 근거",
-                    "2024": "추정 근거"
+                "overseas": {{
+                    "year_2022": "추정 근거",
+                    "year_2023": "추정 근거",
+                    "year_2024": "추정 근거"
                 }}
             }},
             "references": {{
-                "국내": {{
-                    "2022": "출처 URL",
-                    "2023": "출처 URL",
-                    "2024": "출처 URL"
+                "domestic": {{
+                    "year_2022": "출처 URL",
+                    "year_2023": "출처 URL",
+                    "year_2024": "출처 URL"
                 }},
-                "해외": {{
-                    "2022": "출처 URL", 
-                    "2023": "출처 URL",
-                    "2024": "출처 URL"
+                "overseas": {{
+                    "year_2022": "출처 URL", 
+                    "year_2023": "출처 URL",
+                    "year_2024": "출처 URL"
                 }}
             }}
         }}
 
-        요구사항:
-        1. 시장 규모는 반드시 구체적인 금액으로 제공 (백분율이나 출하량 제외)
-        2. 한국 시장은 원화 단위, 해외 시장은 달러 단위, 단위 표시하지 않고 천원 단위의 숫자로만 표기
-        3. 직접적인 시장 규모 데이터가 없는 경우:
+        중요한 요구사항:
+        1. 반드시 위의 정확한 JSON 구조를 따라야 합니다 (키 이름 변경 금지)
+        2. 시장 규모는 반드시 구체적인 금액으로 제공 (백분율이나 출하량 제외)
+        3. market_size 필드에는 한국 시장은 원화 단위, 해외 시장은 달러 단위, 단위 표시하지 않고 천원 단위의 숫자로만 표기
+        4. is_estimated 필드에는 오직 추정이면 True 그렇지 않으면 False 형태로 표기
+        5. 반드시 citations 필드는 제공하지 않고 출처 URL을 references 필드에 매칭하여 제공, 줄바뀜 없이 제공
+        6. 직접적인 시장 규모 데이터가 없는 경우:
            - 관련 산업 데이터, 유사 제품 시장 규모, 시장 점유율, 성장률 등을 수집
            - 이러한 데이터를 바탕으로 시장 규모를 합리적으로 추정
-           - 추정값은 "숫자(추정)" 형태로 표시 (예: "5000000000(추정)")
-           - 추정 근거와 사용된 데이터 출처(URL)을 references에 상세히 기록 [1],[2] 이러한 주석 형태가 아닌 URL 형태로 기록
-           - citations의 출처 URL을 references에 매칭하여 제공
-        4. 추정 시 고려사항:
+           - 추정 근거와 사용된 데이터 출처(URL)을 상세히 기록 [1],[2] 이러한 주석 형태가 아닌 URL 형태로 기록
+           - 절대 citations 필드는 제공하지 않고 출처 URL을 references 필드에 매칭하여 제공, 줄바뀜 없이 제공
+        7. 추정 시 고려사항:
            - 상위 카테고리 시장 규모에서 해당 제품의 예상 점유율 계산
            - 유사 제품군의 시장 규모와 비교 분석
            - 연평균 성장률(CAGR)을 활용한 추정
            - 인구, 경제 규모, 기술 보급률 등 거시경제 지표 활용
-        5. 신뢰할 수 있는 출처의 URL만 제공
-        6. 최신 데이터 우선 제공
-        7. 완전히 데이터를 찾을 수 없는 경우에만 "데이터없음"으로 표시
+        8. 신뢰할 수 있는 출처의 URL만 제공
+        9. 최신 데이터 우선 제공
+        10. 완전히 데이터를 찾을 수 없는 경우에만 "데이터없음"으로 표시
+        11. JSON 형식 외의 다른 텍스트나 설명은 포함하지 않습니다
+        12. citations 필드는 제공하지 않고 출처 URL을 references 필드에 매칭하여 제공, 줄바뀜 없이 제공
 
-        '{item_name}' 시장 규모 데이터를 조사하고, 직접 데이터가 없으면 관련 데이터를 수집하여 합리적으로 추정해주세요.
+        '{item_name}' 시장 규모 데이터를 조사하고, 위의 정확한 JSON 스키마로 응답해주세요.
         """
         
         payload = {
@@ -127,20 +166,28 @@ class PerplexityMarketResearch:
             "messages": [
                 {
                     "role": "system",
-                    "content": "당신은 정확한 시장 데이터를 제공하는 전문 시장 분석가입니다. 항상 JSON 형식으로 응답하고, 신뢰할 수 있는 출처만 인용합니다. 직접적인 시장 규모 데이터가 없는 경우 관련 산업 데이터, 유사 제품 시장 규모, 시장 점유율 등을 수집하여 합리적으로 추정하고, 추정값은 '숫자(추정)' 형태로 표시하며, 추정 근거를 상세히 기록합니다."
+                    "content": "당신은 정확한 시장 데이터를 제공하는 전문 시장 분석가입니다. 항상 JSON 형식으로 응답하고, 신뢰할 수 있는 출처만 인용합니다. 직접적인 시장 규모 데이터가 없는 경우 관련 산업 데이터, 유사 제품 시장 규모, 시장 점유율 등을 수집하여 합리적으로 추정하고, 추정값은 '숫자' 형태로 표시하며, 추정 근거를 상세히 기록합니다."
                 },
                 {
                     "role": "user", 
                     "content": prompt
                 }
             ],
-            "max_tokens": 2000,
-            "return_citations": True,
+            "response_format": {
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "MarketResearchResponse",
+                    "schema": MarketResearchResponse.model_json_schema()
+                }
+            },
+            "max_tokens": 4000,
+            "return_citations": False,
             "return_images": False,
             "return_related_questions": False,
             "stream": False,
-            "presence_penalty": 0,
-            "frequency_penalty": 1
+            "web_search_options": {
+                "search_context_size": "high"
+            }
         }
         
         for attempt in range(max_retries):
@@ -150,8 +197,7 @@ class PerplexityMarketResearch:
                 response = requests.post(
                     self.base_url,
                     headers=headers,
-                    json=payload,
-                    timeout=30
+                    json=payload
                 )
                 
                 response.raise_for_status()
@@ -225,425 +271,116 @@ class PerplexityMarketResearch:
             content = api_response['content']
             logger.info("퍼플렉시티 API 응답 파싱 시작")
             
-            print("api_response: ", api_response)
-
-            
-            # JSON 블록 추출
-            json_text = content.strip()
-            
-            # sonar-reasoning 모델의 <think> 태그 처리
-            if '<think>' in json_text and '</think>' in json_text:
-                # <think> 태그 이후의 내용에서 JSON 추출
-                think_end = json_text.find('</think>') + 8
-                json_text = json_text[think_end:].strip()
-                logger.debug("sonar-reasoning 모델의 <think> 태그 제거 완료")
-            
-            # ```json으로 시작하는 경우 JSON 부분만 추출
-            if '```json' in json_text:
-                start = json_text.find('```json') + 7
-                end = json_text.find('```', start)
-                if end != -1:
-                    json_text = json_text[start:end].strip()
-            elif '```' in json_text and '{' in json_text:
-                # ```로 감싸진 JSON 블록 추출
-                start = json_text.find('{')
-                end = json_text.rfind('}') + 1
-                if start != -1 and end > start:
-                    json_text = json_text[start:end]
-            elif '{' in json_text and '}' in json_text:
-                # { } 사이의 JSON 부분만 추출
-                start = json_text.find('{')
-                end = json_text.rfind('}') + 1
-                if start != -1 and end > start:
-                    json_text = json_text[start:end]
-            
-            # sonar 모델용 JSON 정리 (주석 제거)
-            json_text = self._clean_json_for_sonar_model(json_text)
-            
             # JSON 파싱 시도
             try:
-                parsed_data = json.loads(json_text)
-                # print("parsed_data: ", parsed_data)
-                return parsed_data
+                parsed_data = json.loads(content)
+                logger.info("JSON 파싱 성공")
+                
+                # 새로운 스키마 형식을 기존 형식으로 변환
+                converted_data = self._convert_new_schema_to_old(parsed_data)
+                
+                # 데이터 검증 및 정리
+                validated_data = self._validate_and_clean_data(converted_data)
+                
+                return validated_data
+                
             except json.JSONDecodeError as e:
-                logger.warning(f"첫 번째 JSON 파싱 실패: {e}")
-                # 더 강력한 JSON 추출 시도
-                return self._extract_json_with_fallback(content)
+                logger.error(f"JSON 파싱 실패: {e}")
+                logger.debug(f"파싱 실패한 내용: {content[:500]}...")
+                return None
             
         except Exception as e:
             logger.error(f"데이터 파싱 중 오류 발생: {e}")
             return None
     
-    def _extract_json_with_fallback(self, content):
+    def _convert_new_schema_to_old(self, new_data):
         """
-        JSON 파싱이 실패했을 때 더 강력한 방법으로 JSON 추출 시도
+        새로운 스키마 형식을 기존 형식으로 변환
         
         Args:
-            content (str): 원본 응답 내용
+            new_data (dict): 새로운 스키마 형식 데이터
             
         Returns:
-            dict: 파싱된 데이터 또는 None
-        """
-        import re
-        
-        try:
-            logger.info("Fallback JSON 추출 시도")
-            
-            # 방법 1: 정규식으로 JSON 객체 추출
-            json_pattern = r'\{[^{}]*(?:\{[^{}]*\}[^{}]*)*\}'
-            json_matches = re.findall(json_pattern, content, re.DOTALL)
-            
-            for match in json_matches:
-                try:
-                    # 제어 문자 제거
-                    clean_match = re.sub(r'[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F]', '', match)
-                    parsed = json.loads(clean_match)
-                    if isinstance(parsed, dict) and 'market_size' in parsed:
-                        logger.info("정규식 방법으로 JSON 추출 성공")
-                        
-                        return parsed
-                except:
-                    continue
-            
-            # 방법 2: 중괄호 균형 맞추기로 JSON 추출
-            brace_count = 0
-            start_pos = -1
-            
-            for i, char in enumerate(content):
-                if char == '{':
-                    if start_pos == -1:
-                        start_pos = i
-                    brace_count += 1
-                elif char == '}':
-                    brace_count -= 1
-                    if brace_count == 0 and start_pos != -1:
-                        json_candidate = content[start_pos:i+1]
-                        try:
-                            # 제어 문자 제거
-                            clean_candidate = re.sub(r'[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F]', '', json_candidate)
-                            parsed = json.loads(clean_candidate)
-                            if isinstance(parsed, dict) and 'market_size' in parsed:
-                                logger.info("중괄호 균형 방법으로 JSON 추출 성공")
-                                
-                                return parsed
-                        except:
-                            pass
-                        start_pos = -1
-            
-            # 방법 3: 수동으로 데이터 추출 (최후의 수단)
-            return self._manual_data_extraction(content)
-            
-        except Exception as e:
-            logger.error(f"Fallback JSON 추출 실패: {e}")
-            return None
-    
-    def _manual_data_extraction(self, content):
-        """
-        JSON 파싱이 완전히 실패했을 때 수동으로 데이터 추출
-        
-        Args:
-            content (str): 원본 응답 내용
-            
-        Returns:
-            dict: 추출된 데이터 또는 None
+            dict: 기존 스키마 형식으로 변환된 데이터
         """
         try:
-            logger.info("수동 데이터 추출 시도")
-            
-            # 새로운 JSON 양식에 맞는 기본 구조 생성
-            result = {
+            old_data = {
                 "market_size": {"국내": {}, "해외": {}},
                 "isEstimated": {"국내": {}, "해외": {}},
                 "estimateReason": {"국내": {}, "해외": {}},
                 "references": {"국내": {}, "해외": {}}
             }
             
-            # 숫자 패턴으로 시장 규모 추출
-            import re
+            # 키 매핑
+            region_mapping = {
+                "domestic": "국내",
+                "overseas": "해외"
+            }
             
+            year_mapping = {
+                "year_2022": "2022",
+                "year_2023": "2023", 
+                "year_2024": "2024"
+            }
+            
+            field_mapping = {
+                "market_size": "market_size",
+                "is_estimated": "isEstimated",
+                "estimate_reason": "estimateReason",
+                "references": "references"
+            }
+            
+            # 데이터 변환
+            for new_field, old_field in field_mapping.items():
+                if new_field in new_data and isinstance(new_data[new_field], dict):
+                    for new_region, old_region in region_mapping.items():
+                        if new_region in new_data[new_field] and isinstance(new_data[new_field][new_region], dict):
+                            for new_year, old_year in year_mapping.items():
+                                if new_year in new_data[new_field][new_region]:
+                                    old_data[old_field][old_region][old_year] = new_data[new_field][new_region][new_year]
+            
+            logger.info("스키마 변환 완료")
+            return old_data
+            
+        except Exception as e:
+            logger.error(f"스키마 변환 중 오류 발생: {e}")
+            return new_data  # 변환 실패 시 원본 반환
+    
+    def _validate_and_clean_data(self, data):
+        """
+        데이터 검증 및 정리
+        
+        Args:
+            data (dict): 변환된 데이터
+            
+        Returns:
+            dict: 검증 및 정리된 데이터
+        """
+        try:
+            # 참조 정보가 없는 경우 해당 연도 데이터 삭제
             years = ["2022", "2023", "2024"]
+            regions = ["국내", "해외"]
             
-            # 국내 시장 규모 추출
-            domestic_patterns = [
-                r'"국내"[^}]*"2022"[^"]*"([^"]*)"',
-                r'"국내"[^}]*"2023"[^"]*"([^"]*)"',
-                r'"국내"[^}]*"2024"[^"]*"([^"]*)"'
-            ]
-            
-            for i, pattern in enumerate(domestic_patterns):
-                match = re.search(pattern, content)
-                if match:
-                    market_value = match.group(1)
-                    result["market_size"]["국내"][years[i]] = market_value
-                    
-                    # 추정 여부 판단 (값에 "추정"이 포함되어 있으면 추정, 아니면 실제금액)
-                    if "(추정)" in market_value:
-                        result["isEstimated"]["국내"][years[i]] = "추정"
-                        result["estimateReason"]["국내"][years[i]] = "API 응답에서 추정값으로 표시됨"
-                    else:
-                        result["isEstimated"]["국내"][years[i]] = "실제금액"
-                        result["estimateReason"]["국내"][years[i]] = "API 응답에서 실제 수치로 표시됨"
-                else:
-                    result["market_size"]["국내"][years[i]] = "데이터없음"
-                    result["isEstimated"]["국내"][years[i]] = "데이터없음"
-                    result["estimateReason"]["국내"][years[i]] = "데이터없음"
-            
-            # 해외 시장 규모 추출
-            overseas_patterns = [
-                r'"해외"[^}]*"2022"[^"]*"([^"]*)"',
-                r'"해외"[^}]*"2023"[^"]*"([^"]*)"',
-                r'"해외"[^}]*"2024"[^"]*"([^"]*)"'
-            ]
-            
-            for i, pattern in enumerate(overseas_patterns):
-                match = re.search(pattern, content)
-                if match:
-                    market_value = match.group(1)
-                    result["market_size"]["해외"][years[i]] = market_value
-                    
-                    # 추정 여부 판단
-                    if "(추정)" in market_value:
-                        result["isEstimated"]["해외"][years[i]] = "추정"
-                        result["estimateReason"]["해외"][years[i]] = "API 응답에서 추정값으로 표시됨"
-                    else:
-                        result["isEstimated"]["해외"][years[i]] = "실제금액"
-                        result["estimateReason"]["해외"][years[i]] = "API 응답에서 실제 수치로 표시됨"
-                else:
-                    result["market_size"]["해외"][years[i]] = "데이터없음"
-                    result["isEstimated"]["해외"][years[i]] = "데이터없음"
-                    result["estimateReason"]["해외"][years[i]] = "데이터없음"
-            
-            # references 정보 추출 시도 및 실패 시 해당 시장 규모 데이터 삭제
-            try:
-                # references 섹션 찾기
-                ref_start = content.find('"references"')
-                if ref_start != -1:
-                    # 국내 references 추출
-                    domestic_ref_patterns = [
-                        r'"references"[^}]*"국내"[^}]*"2022"[^"]*"([^"]*)"',
-                        r'"references"[^}]*"국내"[^}]*"2023"[^"]*"([^"]*)"',
-                        r'"references"[^}]*"국내"[^}]*"2024"[^"]*"([^"]*)"'
-                    ]
-                    
-                    for i, pattern in enumerate(domestic_ref_patterns):
-                        match = re.search(pattern, content, re.DOTALL)
-                        if match:
-                            ref_text = match.group(1)
-                            # 제어 문자 제거
-                            ref_text = re.sub(r'[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F]', '', ref_text)
-                            result["references"]["국내"][years[i]] = ref_text[:200] + "..." if len(ref_text) > 200 else ref_text
-                        else:
-                            # 참조 정보 추출 실패 시 해당 연도의 모든 데이터 삭제
-                            logger.warning(f"국내 {years[i]}년 참조 정보 추출 실패, 모든 관련 데이터 삭제")
-                            if years[i] in result["market_size"]["국내"]:
-                                del result["market_size"]["국내"][years[i]]
-                            if years[i] in result["isEstimated"]["국내"]:
-                                del result["isEstimated"]["국내"][years[i]]
-                            if years[i] in result["estimateReason"]["국내"]:
-                                del result["estimateReason"]["국내"][years[i]]
-                            # references에서도 해당 연도 항목 삭제 (흔적 제거)
-                    
-                    # 해외 references 추출
-                    overseas_ref_patterns = [
-                        r'"references"[^}]*"해외"[^}]*"2022"[^"]*"([^"]*)"',
-                        r'"references"[^}]*"해외"[^}]*"2023"[^"]*"([^"]*)"',
-                        r'"references"[^}]*"해외"[^}]*"2024"[^"]*"([^"]*)"'
-                    ]
-                    
-                    for i, pattern in enumerate(overseas_ref_patterns):
-                        match = re.search(pattern, content, re.DOTALL)
-                        if match:
-                            ref_text = match.group(1)
-                            # 제어 문자 제거
-                            ref_text = re.sub(r'[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F]', '', ref_text)
-                            result["references"]["해외"][years[i]] = ref_text[:200] + "..." if len(ref_text) > 200 else ref_text
-                        else:
-                            # 참조 정보 추출 실패 시 해당 연도의 모든 데이터 삭제
-                            logger.warning(f"해외 {years[i]}년 참조 정보 추출 실패, 모든 관련 데이터 삭제")
-                            if years[i] in result["market_size"]["해외"]:
-                                del result["market_size"]["해외"][years[i]]
-                            if years[i] in result["isEstimated"]["해외"]:
-                                del result["isEstimated"]["해외"][years[i]]
-                            if years[i] in result["estimateReason"]["해외"]:
-                                del result["estimateReason"]["해외"][years[i]]
-                            # references에서도 해당 연도 항목 삭제 (흔적 제거)
-                else:
-                    # references 섹션을 찾지 못한 경우 - 모든 데이터 삭제
-                    logger.warning("references 섹션을 찾지 못함, 모든 데이터 삭제")
-                    result["market_size"]["국내"] = {}
-                    result["market_size"]["해외"] = {}
-                    result["isEstimated"]["국내"] = {}
-                    result["isEstimated"]["해외"] = {}
-                    result["estimateReason"]["국내"] = {}
-                    result["estimateReason"]["해외"] = {}
-                    result["references"]["국내"] = {}
-                    result["references"]["해외"] = {}
-                            
-            except Exception as ref_e:
-                logger.warning(f"References 추출 중 오류: {ref_e}, 모든 데이터 삭제")
-                # references 추출 실패 시 모든 데이터 삭제
-                result["market_size"]["국내"] = {}
-                result["market_size"]["해외"] = {}
-                result["isEstimated"]["국내"] = {}
-                result["isEstimated"]["해외"] = {}
-                result["estimateReason"]["국내"] = {}
-                result["estimateReason"]["해외"] = {}
-                result["references"]["국내"] = {}
-                result["references"]["해외"] = {}
-            
-            logger.info("수동 데이터 추출 완료")
-            return result
-            
-        except Exception as e:
-            logger.error(f"수동 데이터 추출 실패: {e}")
-            return None
-    
-    def _clean_json_for_sonar_model(self, json_text):
-        """
-        sonar 모델의 JSON 응답에서 주석과 불완전한 부분을 정리
-        
-        Args:
-            json_text (str): 원본 JSON 텍스트
-            
-        Returns:
-            str: 정리된 JSON 텍스트
-        """
-        try:
-            # 제어 문자 제거 (JSON에서 허용되지 않는 문자들)
-            import re
-            # 제어 문자 제거 (탭, 개행, 캐리지 리턴 제외)
-            json_text = re.sub(r'[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F]', '', json_text)
-            
-            lines = json_text.split('\n')
-            cleaned_lines = []
-            in_comment_block = False
-            brace_count = 0
-            
-            for line in lines:
-                stripped_line = line.strip()
-                
-                # 빈 줄 건너뛰기
-                if not stripped_line:
-                    continue
-                
-                # // 주석으로 시작하는 줄 제거
-                if stripped_line.startswith('//'):
-                    continue
-                
-                # 여러 줄 주석 블록 처리
-                if '/*' in stripped_line and '*/' in stripped_line:
-                    # 한 줄에 시작과 끝이 모두 있는 경우
-                    start = stripped_line.find('/*')
-                    end = stripped_line.find('*/') + 2
-                    cleaned_line = stripped_line[:start] + stripped_line[end:]
-                    if cleaned_line.strip():
-                        cleaned_lines.append(cleaned_line)
-                    continue
-                elif '/*' in stripped_line:
-                    # 여러 줄 주석 시작
-                    in_comment_block = True
-                    before_comment = stripped_line[:stripped_line.find('/*')]
-                    if before_comment.strip():
-                        cleaned_lines.append(before_comment)
-                    continue
-                elif '*/' in stripped_line:
-                    # 여러 줄 주석 끝
-                    in_comment_block = False
-                    after_comment = stripped_line[stripped_line.find('*/') + 2:]
-                    if after_comment.strip():
-                        cleaned_lines.append(after_comment)
-                    continue
-                
-                # 주석 블록 안에 있으면 건너뛰기
-                if in_comment_block:
-                    continue
-                
-                # 인라인 주석 제거 (문자열 내부가 아닌 경우에만)
-                if '//' in stripped_line:
-                    # 문자열 내부인지 확인
-                    quote_count = 0
-                    comment_pos = -1
-                    for i, char in enumerate(stripped_line):
-                        if char == '"' and (i == 0 or stripped_line[i-1] != '\\'):
-                            quote_count += 1
-                        elif char == '/' and i < len(stripped_line) - 1 and stripped_line[i+1] == '/' and quote_count % 2 == 0:
-                            comment_pos = i
-                            break
-                    
-                    if comment_pos != -1:
-                        stripped_line = stripped_line[:comment_pos].strip()
-                
-                # 중괄호 개수 추적
-                brace_count += stripped_line.count('{') - stripped_line.count('}')
-                
-                # 유효한 줄만 추가
-                if stripped_line:
-                    cleaned_lines.append(stripped_line)
-                
-                # JSON 객체가 완료되면 중단 (추가적인 텍스트 무시)
-                if brace_count == 0 and '{' in ''.join(cleaned_lines):
-                    break
-            
-            # 불완전한 마지막 항목 정리
-            cleaned_text = '\n'.join(cleaned_lines)
-            
-            # 마지막 쉼표 뒤에 불완전한 내용이 있으면 제거
-            if cleaned_text.endswith(','):
-                cleaned_text = cleaned_text.rstrip(',')
-            
-            # 불완전한 문자열 값 정리
-            cleaned_text = self._fix_incomplete_json_values(cleaned_text)
-            
-            logger.debug("sonar 모델 JSON 정리 완료")
-            return cleaned_text
-            
-        except Exception as e:
-            logger.warning(f"JSON 정리 중 오류 발생: {e}, 원본 반환")
-            return json_text
-    
-    def _fix_incomplete_json_values(self, json_text):
-        """
-        불완전한 JSON 값들을 수정
-        
-        Args:
-            json_text (str): JSON 텍스트
-            
-        Returns:
-            str: 수정된 JSON 텍스트
-        """
-        try:
-            # 불완전한 문자열 값 찾기 및 수정
-            lines = json_text.split('\n')
-            fixed_lines = []
-            
-            for line in lines:
-                # 따옴표로 시작하지만 제대로 닫히지 않은 값 찾기
-                if ':' in line and '"' in line:
-                    parts = line.split(':', 1)
-                    if len(parts) == 2:
-                        key_part = parts[0].strip()
-                        value_part = parts[1].strip()
+            for region in regions:
+                for year in years:
+                    # references 체크
+                    ref_value = data.get("references", {}).get(region, {}).get(year, "")
+                    market_size_value = data.get("market_size", {}).get(region, {}).get(year, "")
+                    # 참조 정보가 없거나 "데이터없음", "없음" 등인 경우 해당 연도 모든 데이터 삭제
+                    if not ref_value or ref_value in ["데이터없음", "없음", "데이터 없음", "", "괸련 데이터 없음", ""] or not market_size_value or market_size_value in ["데이터없음", "없음", "데이터 없음", "", "괸련 데이터 없음", ""]:
+                        logger.warning(f"{region} {year}년 참조 정보 없음, 모든 관련 데이터 삭제")
                         
-                        # 값 부분이 따옴표로 시작하지만 제대로 끝나지 않는 경우
-                        if value_part.startswith('"') and not (value_part.endswith('"') or value_part.endswith('",') or value_part.endswith('"}')):
-                            # 불완전한 값을 "데이터없음"으로 대체
-                            if value_part.endswith(','):
-                                fixed_value = '"데이터없음",'
-                            elif line.strip().endswith('}'):
-                                fixed_value = '"데이터없음"'
-                            else:
-                                fixed_value = '"데이터없음"'
-                            
-                            line = f"{key_part}: {fixed_value}"
-                            logger.debug(f"불완전한 값 수정: {value_part} -> {fixed_value}")
-                
-                fixed_lines.append(line)
+                        # 모든 필드에서 해당 연도 데이터 삭제
+                        for field in ["market_size", "isEstimated", "estimateReason", "references"]:
+                            if field in data and region in data[field] and year in data[field][region]:
+                                del data[field][region][year]
             
-            return '\n'.join(fixed_lines)
+            logger.info("데이터 검증 및 정리 완료")
+            return data
             
         except Exception as e:
-            logger.warning(f"JSON 값 수정 중 오류 발생: {e}, 원본 반환")
-            return json_text
+            logger.error(f"데이터 검증 중 오류 발생: {e}")
+            return data  # 검증 실패 시 원본 반환
     
     def research_parse(self, item_name, excel_file_path='item_info3.xlsx'):
         """
@@ -667,9 +404,11 @@ class PerplexityMarketResearch:
                 logger.error(f"'{item_name}' API 호출 실패, 재시도 {cnt+1}회")
                 cnt += 1
                 continue
-            
+            print("api_response: ", api_response)
             # 2. 응답 데이터 파싱
             parsed_data = self._parse_market_data(api_response)
+            print("--------------------------------")
+            print("parsed_data: ", parsed_data)
             
             if parsed_data is None:
                 logger.error(f"'{item_name}' 데이터 파싱 실패, 재시도 {cnt+1}회")
@@ -698,41 +437,25 @@ class PerplexityMarketResearch:
         return False
 
 
-def main():
-    """
-    메인 실행 함수
-    """
-    logger.info("퍼플렉시티 시장 조사 프로그램 시작")
-    
-    # 퍼플렉시티 API 클라이언트 초기화
-    try:
-        perplexity_client = PerplexityMarketResearch()
-    except ValueError as e:
-        logger.error(f"클라이언트 초기화 실패: {e}")
-        print("오류: .env 파일에 PERPLEXITY_API_KEY를 설정해주세요.")
-        return
-    
-    # 엑셀 파일 경로
-    excel_file_path = 'item_info3.xlsx'
-    
-    # 테스트 항목
-    test_item = '공유기'
-    
-    print(f"'{test_item}' 시장 규모 조사 시작...")
-    logger.info(f"테스트 항목: {test_item}")
-    
-    # 시장 조사 및 저장 실행
-    success = perplexity_client.research_parse(test_item)
-    
-    if success:
-        print(f"✅ '{test_item}' 시장 규모 데이터 조사 및 저장 완료!")
-        logger.info("테스트 완료 - 성공")
-    else:
-        print(f"❌ '{test_item}' 시장 규모 조사 실패")
-        logger.error("테스트 완료 - 실패")
-    
-    logger.info("퍼플렉시티 시장 조사 프로그램 종료")
-
 
 if __name__ == "__main__":
-    main()
+    data = {
+    'content': '{ "market_size": { "domestic": { "year_2022": "없음", "year_2023": "없음", "year_2024": "ioT 관련 데이터가 아닌 Wi-Fi 라우터 시장 기준으로 4692억 원(약 3억 5천만 달러)" }, "overseas": { "year_2022": "없음", "year_2023": "없음", "year_2024": "없음" } }, "is_estimated": { "domestic": { "year_2022": "없음", "year_2023": "없음", "year_2024": "실제금액" }, "overseas": { "year_2022": "없음", "year_2023": "없음", "year_2024": "없음" } }, "estimate_reason": { "domestic": { "year_2022": "데이터 없음", "year_2023": "데이터 없음", "year_2024": "실제 데이터" }, "overseas": { "year_2022": "데이터 없음", "year_2023": "데이터 없음", "year_2024": "데이터 없음" } }, "references": { "domestic": { "year_2022": "데이터없음", "year_2023": "데이터없음", "year_2024": "https://v.daum.net/v/Wun1pAaV8I" }, "overseas": { "year_2022": "데이터없음", "year_2023": "데이터없음", "year_2024": "데이터없음" } } }',
+    'citations': [
+        'https://v.daum.net/v/Wun1pAaV8I',
+        'http://www.inetbank.co.kr/news_cboard.asp?bi=54&page=16&startpage=1&style=board3',
+        'https://www.globalict.kr/upload_file/kms/202403/54723923920628804.pdf',
+        'http://www.inetbank.co.kr/news_cboard.asp?bi=55&page=16&startpage=11&style=board3',
+        'https://ssl.pstatic.net/imgstock/upload/research/company/1636600850257.pdf'
+    ],
+    'usage': {
+        'prompt_tokens': 978,
+        'completion_tokens': 363,
+        'total_tokens': 1341,
+        'search_context_size': 'low'
+    },
+    'success': True
+}
+    parsed_data = PerplexityMarketResearch()._parse_market_data(data)
+    save_to_excel_v2('item_info3.xlsx', '공유기', parsed_data)
+    print(parsed_data)
