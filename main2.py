@@ -93,7 +93,8 @@ if __name__ == "__main__":
             processed_count = 0
             
             for index, item in items_from_row3.items():
-                
+                if index <= 170:
+                    continue
                 # result = get_industry_data_with_gemini(item)
                 # data = parse_industry_data_with_gemini(result)
                 data = PerplexityMarketResearch().research_parse(item)
