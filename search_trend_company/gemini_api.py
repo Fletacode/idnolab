@@ -34,7 +34,7 @@ def get_trend_companies_with_gemini(item_name, item_description, max_retries=3):
     """
     Gemini API를 사용하여 특정 물품과 관련된 트렌드 기업 정보를 요청
     """
-    logger.info(f"'{item_name}' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작")
+    logger.debug(f"'{item_name}' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작")
     
     for attempt in range(max_retries):
         try:
@@ -74,14 +74,14 @@ def get_trend_companies_with_gemini(item_name, item_description, max_retries=3):
                 }
             )
             
-            logger.info(f"'{item_name}' 트렌드 기업 정보 API 호출 성공")
+            logger.debug(f"'{item_name}' 트렌드 기업 정보 API 호출 성공")
             logger.debug(f"응답 길이: {len(response.text)} 문자")
             return response.text
                 
         except Exception as e:
             if attempt < max_retries - 1:
                 logger.error(f"API 호출 오류 발생: {e}")
-                logger.info(f"재시도 중... (시도 {attempt + 1}/{max_retries})")
+                logger.debug(f"재시도 중... (시도 {attempt + 1}/{max_retries})")
                 time.sleep(5)
                 continue
             else:
@@ -97,7 +97,7 @@ def parse_trend_companies_with_gemini(response_text):
     Gemini API 응답을 파싱하여 TrendCompany 객체로 변환하는 함수
     """
     
-    logger.info("Gemini API 트렌드 기업 응답 데이터 파싱 시작")
+    logger.debug("Gemini API 트렌드 기업 응답 데이터 파싱 시작")
     logger.debug(f"응답 텍스트 길이: {len(str(response_text))}")
     
     try:
@@ -130,7 +130,7 @@ def parse_trend_companies_with_gemini(response_text):
             
             # 단일 객체 형태로 반환
             if isinstance(parsed_data, dict):
-                logger.info("트렌드 기업 정보 파싱 완료")
+                logger.debug("트렌드 기업 정보 파싱 완료")
                 return parsed_data
             else:
                 logger.warning("예상과 다른 데이터 형태")

@@ -11,7 +11,7 @@ if __name__ == "__main__":
         df = pd.read_excel("item_info_trend.xlsx", sheet_name="Sheet1")
         df.astype(object)
         for index, row in df.iterrows():
-            if index < 1:
+            if index < 0:
                 continue
             
             trend_companies = get_trend_companies_with_gemini(row['code_name'], row['개념설명'])
@@ -21,6 +21,7 @@ if __name__ == "__main__":
             
             df.loc[index] = update_row
             df.to_excel("item_info_trend.xlsx", sheet_name="Sheet1", index=False)
+            logger.info(f"트렌드 기업 정보 저장 완료: {row['code_name']}: {index}")
             time.sleep(100)
     except Exception as e:
         print(e)
