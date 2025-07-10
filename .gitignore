@@ -3,3 +3,6 @@
 /__pycache__
 /.env
 /logs
+/search_trend_company/.env
+/search_trend_company/__pycache__
+/search_trend_company/venv

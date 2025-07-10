@@ -1,0 +1,3 @@
+2025-07-10 10:09:39 - gemini_api - INFO - get_trend_companies_with_gemini:38 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 10:09:39 - gemini_api - WARNING - get_trend_companies_with_gemini:84 - API 호출 오류 발생: Invalid format specifier
+2025-07-10 10:09:39 - gemini_api - INFO - get_trend_companies_with_gemini:85 - 재시도 중... (시도 1/3)

@@ -53,8 +53,9 @@ class PerplexityMarketResearch:
         퍼플렉시티 API를 사용한 시장 규모 조사 클래스
         """
         self.api_key = os.getenv('PERPLEXITY_API_KEY')
+        print("self.api_key: ", self.api_key)
         self.base_url = "https://api.perplexity.ai/chat/completions"
-        
+        print("self.api_key: ", self.api_key)
         if not self.api_key:
             logger.error("PERPLEXITY_API_KEY 환경변수가 설정되지 않았습니다.")
             raise ValueError("PERPLEXITY_API_KEY가 필요합니다.")
@@ -382,7 +383,7 @@ class PerplexityMarketResearch:
             logger.error(f"데이터 검증 중 오류 발생: {e}")
             return data  # 검증 실패 시 원본 반환
     
-    def research_parse(self, item_name, excel_file_path='item_info3.xlsx'):
+    def research_parse(self, item_name, excel_file_path='item_info_3.xlsx'):
         """
         시장 규모 조사 후 엑셀 파일에 저장 (새로운 JSON 양식 지원)
         
@@ -457,5 +458,5 @@ if __name__ == "__main__":
     'success': True
 }
     parsed_data = PerplexityMarketResearch()._parse_market_data(data)
-    save_to_excel_v2('item_info3.xlsx', '공유기', parsed_data)
+    save_to_excel_v2('item_info_3.xlsx', '공유기', parsed_data)
     print(parsed_data)

@@ -42,7 +42,7 @@ def list_available_models():
         print(f"모델 목록 조회 중 오류 발생: {e}")
 
 if __name__ == "__main__":
-    excel_file_path = 'item_info3.xlsx'
+    excel_file_path = 'item_info_3.xlsx'
     logger.info("프로그램 시작")
     # list_available_models()
     # 테스트용 - 하나의 아이템만 실행
@@ -91,13 +91,30 @@ if __name__ == "__main__":
             print("B열의 3행부터 물품명 처리 시작:")
             logger.info("B열의 3행부터 물품명 처리 시작")
             processed_count = 0
-            
+            numbers = [
+    10, 23, 66, 137, 138, 150, 167, 172, 175, 196, 311, 314, 335, 438, 471, 477, 484,
+    538, 548, 558, 571, 573, 575, 576, 585, 593, 594, 595, 600, 604, 609, 617, 618,
+    625, 628, 642, 644, 662, 667, 678, 685, 694, 695, 698, 702, 705, 708, 711, 717,
+    725, 731, 734, 742, 743, 747, 759, 760, 764, 773, 788, 801, 802, 804, 807, 813,
+    824, 839, 852, 855, 857, 873, 882, 887, 889, 892, 899, 905, 910, 915, 919, 920,
+    925, 930, 937, 938, 943, 948, 954, 956, 957, 963, 966, 970, 972, 974, 976, 980,
+    981, 982, 983, 987, 988, 996, 1000, 1011, 1015, 1016, 1026, 1031, 1035, 1036,
+    1041, 1044, 1050, 1052, 1054, 1056, 1061, 1064, 1065, 1067, 1070, 1073, 1074,
+    1079, 1084, 1088, 1090, 1095, 1114, 1115, 1116, 1121, 1122, 1123, 1129, 1133,
+    1138, 1139, 1142, 1145, 1147, 1153, 1154, 1157, 1164, 1171, 1172, 1175, 1179,
+    1180, 1186, 1187, 1193, 1195, 1197, 1204, 1205, 1209, 1210, 1215, 1217, 1227,
+    1228, 1248, 1254, 1256, 1260, 1261, 1266, 1277, 1278, 1279, 1280, 1281, 1283, 1284
+]
             for index, item in items_from_row3.items():
+<<<<<<< HEAD
                 if index <= 917:
+=======
+                if index not in numbers:
+>>>>>>> a3aca8f (feat: 엑셀 파일 이름 변경 및 불필요한 파일 삭제, .gitignore 업데이트, 트렌드 기업 찾는 코드 추가)
                     continue
                 # result = get_industry_data_with_gemini(item)
                 # data = parse_industry_data_with_gemini(result)
-                data = PerplexityMarketResearch().research_parse(item)
+                data = PerplexityMarketResearch().research_parse(item, excel_file_path)
                 
                 save_to_excel_v2(excel_file_path, item, data)
                 logger.info(f"{item} 엑셀 저장 완료")
