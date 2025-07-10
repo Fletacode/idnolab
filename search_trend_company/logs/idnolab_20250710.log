@@ -1,3 +1,115 @@
 2025-07-10 10:09:39 - gemini_api - INFO - get_trend_companies_with_gemini:38 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
 2025-07-10 10:09:39 - gemini_api - WARNING - get_trend_companies_with_gemini:84 - API 호출 오류 발생: Invalid format specifier
 2025-07-10 10:09:39 - gemini_api - INFO - get_trend_companies_with_gemini:85 - 재시도 중... (시도 1/3)
+2025-07-10 10:52:16 - gemini_api - INFO - get_trend_companies_with_gemini:38 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 10:52:16 - gemini_api - WARNING - get_trend_companies_with_gemini:84 - API 호출 오류 발생: Invalid format specifier ' "기업명",
+                            "company_url": "https://example.com",
+                            "company_description": "기업 소개 및 설명",
+                            "company_best_product": "주력 제품명",
+                            "company_best_product_url": "https://example.com/product",
+                            "company_best_product_description": "주력 제품 설명"
+                        ' for object of type 'str'
+2025-07-10 10:52:16 - gemini_api - INFO - get_trend_companies_with_gemini:85 - 재시도 중... (시도 1/3)
+2025-07-10 10:53:57 - gemini_api - INFO - get_trend_companies_with_gemini:38 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 10:53:57 - gemini_api - WARNING - get_trend_companies_with_gemini:84 - API 호출 오류 발생: Invalid format specifier ' "기업명",
+                            "company_url": "https://example.com",
+                            "company_description": "기업 소개 및 설명",
+                            "company_best_product": "주력 제품명",
+                            "company_best_product_url": "https://example.com/product",
+                            "company_best_product_description": "주력 제품 설명"
+                        ' for object of type 'str'
+2025-07-10 10:53:57 - gemini_api - INFO - get_trend_companies_with_gemini:85 - 재시도 중... (시도 1/3)
+2025-07-10 10:54:02 - gemini_api - WARNING - get_trend_companies_with_gemini:84 - API 호출 오류 발생: Invalid format specifier ' "기업명",
+                            "company_url": "https://example.com",
+                            "company_description": "기업 소개 및 설명",
+                            "company_best_product": "주력 제품명",
+                            "company_best_product_url": "https://example.com/product",
+                            "company_best_product_description": "주력 제품 설명"
+                        ' for object of type 'str'
+2025-07-10 10:54:02 - gemini_api - INFO - get_trend_companies_with_gemini:85 - 재시도 중... (시도 2/3)
+2025-07-10 10:56:49 - gemini_api - INFO - get_trend_companies_with_gemini:38 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 10:56:49 - gemini_api - WARNING - get_trend_companies_with_gemini:84 - API 호출 오류 발생: Invalid format specifier ' "기업명",
+                            "company_url": "https://example.com",
+                            "company_description": "기업 소개 및 설명",
+                            "company_best_product": "주력 제품명",
+                            "company_best_product_url": "https://example.com/product",
+                            "company_best_product_description": "주력 제품 설명"
+                        ' for object of type 'str'
+2025-07-10 10:56:49 - gemini_api - INFO - get_trend_companies_with_gemini:85 - 재시도 중... (시도 1/3)
+2025-07-10 10:57:07 - gemini_api - INFO - get_trend_companies_with_gemini:38 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 10:57:07 - gemini_api - WARNING - get_trend_companies_with_gemini:84 - API 호출 오류 발생: Invalid format specifier ' "기업명",
+                            "company_url": "https://example.com",
+                            "company_description": "기업 소개 및 설명",
+                            "company_best_product": "주력 제품명",
+                            "company_best_product_url": "https://example.com/product",
+                            "company_best_product_description": "주력 제품 설명"
+                        ' for object of type 'str'
+2025-07-10 10:57:07 - gemini_api - INFO - get_trend_companies_with_gemini:85 - 재시도 중... (시도 1/3)
+2025-07-10 10:57:12 - gemini_api - WARNING - get_trend_companies_with_gemini:84 - API 호출 오류 발생: Invalid format specifier ' "기업명",
+                            "company_url": "https://example.com",
+                            "company_description": "기업 소개 및 설명",
+                            "company_best_product": "주력 제품명",
+                            "company_best_product_url": "https://example.com/product",
+                            "company_best_product_description": "주력 제품 설명"
+                        ' for object of type 'str'
+2025-07-10 10:57:12 - gemini_api - INFO - get_trend_companies_with_gemini:85 - 재시도 중... (시도 2/3)
+2025-07-10 11:00:16 - gemini_api - INFO - get_trend_companies_with_gemini:38 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 11:01:34 - gemini_api - INFO - get_trend_companies_with_gemini:38 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 11:01:34 - gemini_api - ERROR - get_trend_companies_with_gemini:84 - API 호출 오류 발생: Invalid format specifier ' '기업명',
+                            'company_url': 'https://example.com',
+                            'company_description': '기업 소개 및 설명',
+                            'company_best_product': '주력 제품명',
+                            'company_best_product_url': 'https://example.com/product',
+                            'company_best_product_description': '주력 제품 설명'
+                        ' for object of type 'str'
+2025-07-10 11:01:34 - gemini_api - INFO - get_trend_companies_with_gemini:85 - 재시도 중... (시도 1/3)
+2025-07-10 11:04:32 - gemini_api - INFO - get_trend_companies_with_gemini:38 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 11:05:14 - gemini_api - INFO - get_trend_companies_with_gemini:78 - '노트북' 트렌드 기업 정보 API 호출 성공
+2025-07-10 11:05:57 - gemini_api - INFO - get_trend_companies_with_gemini:37 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 11:06:14 - gemini_api - INFO - get_trend_companies_with_gemini:77 - '노트북' 트렌드 기업 정보 API 호출 성공
+2025-07-10 11:11:37 - gemini_api - INFO - get_trend_companies_with_gemini:37 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 11:12:05 - gemini_api - INFO - get_trend_companies_with_gemini:77 - '노트북' 트렌드 기업 정보 API 호출 성공
+2025-07-10 11:15:43 - gemini_api - INFO - get_trend_companies_with_gemini:37 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 11:16:03 - gemini_api - INFO - get_trend_companies_with_gemini:77 - '노트북' 트렌드 기업 정보 API 호출 성공
+2025-07-10 11:16:03 - gemini_api - INFO - parse_trend_companies_with_gemini:100 - Gemini API 트렌드 기업 응답 데이터 파싱 시작
+2025-07-10 11:16:03 - gemini_api - INFO - parse_trend_companies_with_gemini:133 - 트렌드 기업 정보 파싱 완료
+2025-07-10 11:24:35 - gemini_api - INFO - get_trend_companies_with_gemini:37 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 11:25:04 - gemini_api - INFO - get_trend_companies_with_gemini:77 - '노트북' 트렌드 기업 정보 API 호출 성공
+2025-07-10 11:25:04 - gemini_api - INFO - parse_trend_companies_with_gemini:100 - Gemini API 트렌드 기업 응답 데이터 파싱 시작
+2025-07-10 11:25:04 - gemini_api - INFO - parse_trend_companies_with_gemini:133 - 트렌드 기업 정보 파싱 완료
+2025-07-10 11:38:58 - gemini_api - INFO - get_trend_companies_with_gemini:37 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 11:39:26 - gemini_api - INFO - get_trend_companies_with_gemini:77 - '노트북' 트렌드 기업 정보 API 호출 성공
+2025-07-10 11:39:26 - gemini_api - INFO - parse_trend_companies_with_gemini:100 - Gemini API 트렌드 기업 응답 데이터 파싱 시작
+2025-07-10 11:39:26 - gemini_api - INFO - parse_trend_companies_with_gemini:133 - 트렌드 기업 정보 파싱 완료
+2025-07-10 11:39:26 - save_to_excel - INFO - save_to_excel:13 - 트렌드 기업 정보 저장 완료: Apple
+2025-07-10 11:40:07 - gemini_api - INFO - get_trend_companies_with_gemini:37 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 11:40:37 - gemini_api - INFO - get_trend_companies_with_gemini:77 - '노트북' 트렌드 기업 정보 API 호출 성공
+2025-07-10 11:40:37 - gemini_api - INFO - parse_trend_companies_with_gemini:100 - Gemini API 트렌드 기업 응답 데이터 파싱 시작
+2025-07-10 11:40:37 - gemini_api - INFO - parse_trend_companies_with_gemini:133 - 트렌드 기업 정보 파싱 완료
+2025-07-10 11:40:37 - save_to_excel - INFO - save_to_excel:13 - 트렌드 기업 정보 저장 완료: Apple
+2025-07-10 11:45:31 - gemini_api - INFO - get_trend_companies_with_gemini:37 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 11:45:52 - gemini_api - INFO - get_trend_companies_with_gemini:77 - '노트북' 트렌드 기업 정보 API 호출 성공
+2025-07-10 11:45:52 - gemini_api - INFO - parse_trend_companies_with_gemini:100 - Gemini API 트렌드 기업 응답 데이터 파싱 시작
+2025-07-10 11:45:52 - gemini_api - INFO - parse_trend_companies_with_gemini:133 - 트렌드 기업 정보 파싱 완료
+2025-07-10 11:45:52 - save_to_excel - INFO - save_to_excel:13 - 트렌드 기업 정보 저장 완료: Apple
+2025-07-10 11:47:24 - gemini_api - INFO - get_trend_companies_with_gemini:37 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 11:47:48 - gemini_api - INFO - get_trend_companies_with_gemini:77 - '노트북' 트렌드 기업 정보 API 호출 성공
+2025-07-10 11:47:48 - gemini_api - INFO - parse_trend_companies_with_gemini:100 - Gemini API 트렌드 기업 응답 데이터 파싱 시작
+2025-07-10 11:47:48 - gemini_api - INFO - parse_trend_companies_with_gemini:133 - 트렌드 기업 정보 파싱 완료
+2025-07-10 11:47:48 - save_to_excel - INFO - save_to_excel:13 - 트렌드 기업 정보 저장 완료: Apple
+2025-07-10 11:48:25 - gemini_api - INFO - get_trend_companies_with_gemini:37 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 11:49:02 - gemini_api - INFO - get_trend_companies_with_gemini:77 - '노트북' 트렌드 기업 정보 API 호출 성공
+2025-07-10 11:49:02 - gemini_api - INFO - parse_trend_companies_with_gemini:100 - Gemini API 트렌드 기업 응답 데이터 파싱 시작
+2025-07-10 11:49:02 - gemini_api - INFO - parse_trend_companies_with_gemini:133 - 트렌드 기업 정보 파싱 완료
+2025-07-10 11:49:02 - save_to_excel - INFO - save_to_excel:13 - 트렌드 기업 정보 저장 완료: Apple
+2025-07-10 11:53:45 - gemini_api - INFO - get_trend_companies_with_gemini:37 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 11:54:07 - gemini_api - INFO - get_trend_companies_with_gemini:77 - '노트북' 트렌드 기업 정보 API 호출 성공
+2025-07-10 11:54:07 - gemini_api - INFO - parse_trend_companies_with_gemini:100 - Gemini API 트렌드 기업 응답 데이터 파싱 시작
+2025-07-10 11:54:07 - gemini_api - INFO - parse_trend_companies_with_gemini:133 - 트렌드 기업 정보 파싱 완료
+2025-07-10 11:54:07 - save_to_excel - INFO - save_to_excel:13 - 트렌드 기업 정보 저장 완료: 삼성전자
+2025-07-10 11:56:27 - gemini_api - INFO - get_trend_companies_with_gemini:37 - '노트북' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
+2025-07-10 11:56:55 - gemini_api - INFO - get_trend_companies_with_gemini:77 - '노트북' 트렌드 기업 정보 API 호출 성공
+2025-07-10 11:56:55 - gemini_api - INFO - parse_trend_companies_with_gemini:100 - Gemini API 트렌드 기업 응답 데이터 파싱 시작
+2025-07-10 11:56:55 - gemini_api - INFO - parse_trend_companies_with_gemini:133 - 트렌드 기업 정보 파싱 완료
+2025-07-10 11:56:55 - save_to_excel - INFO - save_to_excel:13 - 트렌드 기업 정보 저장 완료: Apple
+2025-07-10 11:57:44 - gemini_api - INFO - get_trend_companies_with_gemini:37 - '스마트 허브' 항목에 대한 트렌드 기업 정보 Gemini API 호출 시작
