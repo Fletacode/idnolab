@@ -48,21 +48,27 @@ if __name__ == "__main__":
         1278, 1279, 1280, 1281, 1282, 1284
         ]
 
+        numbers = [i - 2 for i in numbers]
+
         for index, row in df.iterrows():
             if index not in numbers:
                 continue
-            item = row['code_name']
-            item_description = row['개념설명']
-            result = get_industry_data_with_gemini(item, item_description)
-            data = parse_industry_data_with_gemini(result)
-            save_to_excel_gemini("item_info_3.xlsx", item, data)
-            # data = PerplexityMarketResearch().research_parse(item, excel_file_path)
-            # save_to_excel_v2(excel_file_path, item, data)
-            logger.info(f"{item} 엑셀 저장 완료")
-        
-            # API 호출 간격 조절 (요청 제한 방지)
-            logger.info("API 호출 간격 조절을 위해 10초 대기")
-            time.sleep(10)
+            try:
+
+                item = row['code_name']
+                item_description = row['개념설명']
+                result = get_industry_data_with_gemini(item, item_description)
+                data = parse_industry_data_with_gemini(result)
+                save_to_excel_gemini("item_info_3.xlsx", item, data)
+                # data = PerplexityMarketResearch().research_parse(item, excel_file_path)
+                # save_to_excel_v2(excel_file_path, item, data)
+                logger.info(f"{item}, {index} 엑셀 저장 완료")
+                
+                # API 호출 간격 조절 (요청 제한 방지)
+                time.sleep(10)
+            except Exception as e:
+                logger.error(f"오류 발생: {e}")
+                continue
 
         final_msg = f"최종 완료! 총 {processed_count}개 처리됨"
         result_msg = f"결과가 '{excel_file_path}' 파일에 저장되었습니다."

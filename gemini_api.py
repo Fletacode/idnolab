@@ -158,38 +158,29 @@ def get_industry_data_with_gemini(item_name,item_description, max_retries=3):
     Gemini API를 사용하여 특정 물품의 국내, 해외 산업 규모 데이터를 요청
     """
     
-    logger.info(f"'{item_name}' 항목에 대한 Gemini API 호출 시작")
     
-    for attempt in range(max_retries):
-        try:
-            logger.debug(f"API 호출 시도 {attempt + 1}/{max_retries}")
-            # logger.info("token count:" + str(client.models.count_tokens(model="gemini-2.5-pro", contents=get_prompt(item_name, item_description))))
-            response = client.models.generate_content(
-                model="gemini-2.5-pro",
-                contents= get_prompt(item_name, item_description),
+    try:
+        # logger.info("token count:" + str(client.models.count_tokens(model="gemini-2.5-pro", contents=get_prompt(item_name, item_description))))
+        response = client.models.generate_content(
+            model="gemini-2.5-pro",
+            contents= get_prompt(item_name, item_description),
 
-                config = config
-            )
+            config = config
+        )
+        
+
+        return response.text
             
-            logger.info(f"'{item_name}' API 호출 성공")
-            # logger.info(f"응답: {response}")
-            return response.text
-                
-        except Exception as e:
-            logger.error(f"API 요청 최종 실패: {str(e)}")
-            return f"API 요청 오류: {str(e)}"
-
-    logger.error("최대 재시도 횟수 초과")
-    return "최대 재시도 횟수 초과"
+    except Exception as e:
+        logger.error(f"{item_name} API 요청 실패: {str(e)}")
+        return f"API 요청 오류: {str(e)}"
 
 
 def parse_industry_data_with_gemini(response_text):
     """
     Gemini API 응답을 파싱하여 표준 형태로 변환하는 함수
     """
-    
-    logger.info("Gemini API 응답 데이터 파싱 시작")
-    logger.debug(f"응답 텍스트 길이: {len(str(response_text))}")
+
     try:
         # JSON 문자열을 파싱
         if isinstance(response_text, str):
@@ -252,11 +243,7 @@ def parse_industry_data_with_gemini(response_text):
                             except json.JSONDecodeError as e:
                                 print(f"references 파싱 오류: {e}")
                         
-                        logger.info("새로운 Gemini 응답 형태 파싱 완료")
-                        logger.debug(f"국내 시장 규모: {result['market_size']['국내']}")
-                        logger.debug(f"해외 시장 규모: {result['market_size']['해외']}")
-                        logger.debug(f"국내 참고자료: {result['references']['국내']}")
-                        logger.debug(f"해외 참고자료: {result['references']['해외']}")
+        
                         
                         return result
                     else:

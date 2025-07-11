@@ -41,35 +41,76 @@ def find_item_row(excel_file_path, item_name, column_name='code_name') -> pd.Ser
         logger.error(f"B열에서 항목 찾기 중 오류 발생: {e}")
         return None
 
-
+def fitter_data(data) -> bool:
+    if data == "데이터 없음" or data == "데이터 없음." or data == "데이터없음" or data == "" or data == None or data.strip() == "":
+        return False
+    return True
 
 def save_to_excel_gemini(excel_file_path, item_name, parsed_data) -> pd.Series:
     try:
         row = find_item_row(excel_file_path, item_name)
-        row['국내 산업규모 (2022)'] = str(parsed_data['market_size']['domestic']['year_2022'])
-        row['국내 산업규모 (2023)'] = str(parsed_data['market_size']['domestic']['year_2023'])
-        row['국내 산업규모 (2024)'] = str(parsed_data['market_size']['domestic']['year_2024'])
-        row['해외 산업규모 (2022)'] = str(parsed_data['market_size']['overseas']['year_2022'])
-        row['해외 산업규모 (2023)'] = str(parsed_data['market_size']['overseas']['year_2023'])
-        row['해외 산업규모 (2024)'] = str(parsed_data['market_size']['overseas']['year_2024'])
-        row['국내 추정여부 (2022)'] = str(parsed_data['is_estimated']['domestic']['year_2022'])
-        row['국내 추정여부 (2023)'] = str(parsed_data['is_estimated']['domestic']['year_2023'])
-        row['국내 추정여부 (2024)'] = str(parsed_data['is_estimated']['domestic']['year_2024'])
-        row['해외 추정여부 (2022)'] = str(parsed_data['is_estimated']['overseas']['year_2022'])
-        row['해외 추정여부 (2023)'] = str(parsed_data['is_estimated']['overseas']['year_2023'])
-        row['해외 추정여부 (2024)'] = str(parsed_data['is_estimated']['overseas']['year_2024'])
-        row['국내 추정근거 (2022)'] = str(parsed_data['estimate_reason']['domestic']['year_2022'])
-        row['국내 추정근거 (2023)'] = str(parsed_data['estimate_reason']['domestic']['year_2023'])
-        row['국내 추정근거 (2024)'] = str(parsed_data['estimate_reason']['domestic']['year_2024'])
-        row['해외 추정근거 (2022)'] = str(parsed_data['estimate_reason']['overseas']['year_2022'])
-        row['해외 추정근거 (2023)'] = str(parsed_data['estimate_reason']['overseas']['year_2023'])
-        row['해외 추정근거 (2024)'] = str(parsed_data['estimate_reason']['overseas']['year_2024'])
-        row['출처 (국내 2022)'] = str(parsed_data['references']['domestic']['year_2022'])
-        row['출처 (국내 2023)'] = str(parsed_data['references']['domestic']['year_2023'])
-        row['출처 (국내 2024)'] = str(parsed_data['references']['domestic']['year_2024'])
-        row['출처 (해외 2022)'] = str(parsed_data['references']['overseas']['year_2022'])
-        row['출처 (해외 2023)'] = str(parsed_data['references']['overseas']['year_2023'])
-        row['출처 (해외 2024)'] = str(parsed_data['references']['overseas']['year_2024'])
+        if fitter_data(parsed_data['market_size']['domestic']['year_2022']):
+            row['국내 산업규모 (2022)'] = str(parsed_data['market_size']['domestic']['year_2022'])
+            row['국내 추정여부 (2022)'] = str(parsed_data['is_estimated']['domestic']['year_2022'])
+            row['국내 추정근거 (2022)'] = str(parsed_data['estimate_reason']['domestic']['year_2022'])
+            row['출처 (국내 2022)'] = str(parsed_data['references']['domestic']['year_2022'])
+        else:
+            row['국내 산업규모 (2022)'] = ""
+            row['국내 추정여부 (2022)'] = ""
+            row['국내 추정근거 (2022)'] = ""
+            row['출처 (국내 2022)'] = ""
+        if fitter_data(parsed_data['market_size']['domestic']['year_2023']):
+            row['국내 산업규모 (2023)'] = str(parsed_data['market_size']['domestic']['year_2023'])
+            row['국내 추정여부 (2023)'] = str(parsed_data['is_estimated']['domestic']['year_2023'])
+            row['국내 추정근거 (2023)'] = str(parsed_data['estimate_reason']['domestic']['year_2023'])
+            row['출처 (국내 2023)'] = str(parsed_data['references']['domestic']['year_2023'])
+        else:
+            row['국내 산업규모 (2023)'] = ""
+            row['국내 추정여부 (2023)'] = ""
+            row['국내 추정근거 (2023)'] = ""
+            row['출처 (국내 2023)'] = ""
+        if fitter_data(parsed_data['market_size']['domestic']['year_2024']):
+            row['국내 산업규모 (2024)'] = str(parsed_data['market_size']['domestic']['year_2024'])
+            row['국내 추정여부 (2024)'] = str(parsed_data['is_estimated']['domestic']['year_2024'])
+            row['국내 추정근거 (2024)'] = str(parsed_data['estimate_reason']['domestic']['year_2024'])
+            row['출처 (국내 2024)'] = str(parsed_data['references']['domestic']['year_2024'])
+        else:
+            row['국내 산업규모 (2024)'] = ""
+            row['국내 추정여부 (2024)'] = ""
+            row['국내 추정근거 (2024)'] = ""
+            row['출처 (국내 2024)'] = ""
+
+        if fitter_data(parsed_data['market_size']['overseas']['year_2022']):
+            row['해외 산업규모 (2022)'] = str(parsed_data['market_size']['overseas']['year_2022'])
+            row['해외 추정여부 (2022)'] = str(parsed_data['is_estimated']['overseas']['year_2022'])
+            row['해외 추정근거 (2022)'] = str(parsed_data['estimate_reason']['overseas']['year_2022'])
+            row['출처 (해외 2022)'] = str(parsed_data['references']['overseas']['year_2022'])
+        else:
+            row['해외 산업규모 (2022)'] = ""
+            row['해외 추정여부 (2022)'] = ""
+            row['해외 추정근거 (2022)'] = ""
+            row['출처 (해외 2022)'] = ""
+        if fitter_data(parsed_data['market_size']['overseas']['year_2023']):
+            row['해외 산업규모 (2023)'] = str(parsed_data['market_size']['overseas']['year_2023'])
+            row['해외 추정여부 (2023)'] = str(parsed_data['is_estimated']['overseas']['year_2023'])
+            row['해외 추정근거 (2023)'] = str(parsed_data['estimate_reason']['overseas']['year_2023'])
+            row['출처 (해외 2023)'] = str(parsed_data['references']['overseas']['year_2023'])
+        else:
+            row['해외 산업규모 (2023)'] = ""
+            row['해외 추정여부 (2023)'] = ""
+            row['해외 추정근거 (2023)'] = ""
+            row['출처 (해외 2023)'] = ""
+        if fitter_data(parsed_data['market_size']['overseas']['year_2024']):
+            row['해외 산업규모 (2024)'] = str(parsed_data['market_size']['overseas']['year_2024'])
+            row['해외 추정여부 (2024)'] = str(parsed_data['is_estimated']['overseas']['year_2024'])
+            row['해외 추정근거 (2024)'] = str(parsed_data['estimate_reason']['overseas']['year_2024'])
+            row['출처 (해외 2024)'] = str(parsed_data['references']['overseas']['year_2024'])
+        else:
+            row['해외 산업규모 (2024)'] = ""
+            row['해외 추정여부 (2024)'] = ""
+            row['해외 추정근거 (2024)'] = ""
+            row['출처 (해외 2024)'] = ""  
+
         df = pd.read_excel(excel_file_path)
         df.loc[row.name] = row
         df.to_excel(excel_file_path, index=False)
