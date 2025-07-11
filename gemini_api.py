@@ -4,17 +4,48 @@ from logger_config import get_logger
 import os
 import time
 from google import genai
-
-
+from google.genai import types
+import json
+from save_excel_gemini import save_to_excel_gemini
 # .env 파일에서 환경변수 로드
 load_dotenv()
 
 # 로거 설정
 logger = get_logger("gemini_api")
 
-class MarketSize(BaseModel):
-    market_size: list[str]
-    references: list[str]
+class YearlyData(BaseModel):
+    """연도별 데이터 모델"""
+    year_2022: str
+    year_2023: str
+    year_2024: str
+
+class MarketSizeData(BaseModel):
+    """시장 규모 데이터 모델"""
+    domestic: YearlyData  # 국내
+    overseas: YearlyData  # 해외
+
+class EstimatedData(BaseModel):
+    """추정 여부 데이터 모델"""
+    domestic: YearlyData  # 국내
+    overseas: YearlyData  # 해외
+
+class EstimateReasonData(BaseModel):
+    """추정 근거 데이터 모델"""
+    domestic: YearlyData  # 국내
+    overseas: YearlyData  # 해외
+
+class ReferencesData(BaseModel):
+    """참조 데이터 모델"""
+    domestic: YearlyData  # 국내
+    overseas: YearlyData  # 해외
+
+class MarketResearchResponse(BaseModel):
+    """시장 조사 응답 전체 모델"""
+    market_size: MarketSizeData
+    is_estimated: EstimatedData
+    estimate_reason: EstimateReasonData
+    references: ReferencesData
+
 
 # Gemini API 설정
 GEMINI_API_KEY = os.getenv('GOOGLE_API_KEY')
@@ -24,7 +55,105 @@ client = genai.Client(
     api_key=GEMINI_API_KEY
 )
 
-def get_industry_data_with_gemini(item_name, max_retries=3):
+# Define the grounding tool
+grounding_tool = types.Tool(
+    google_search=types.GoogleSearch()
+)
+
+url_context_tool = types.Tool(
+    url_context = types.UrlContext()
+)
+
+# Configure generation settings
+config = types.GenerateContentConfig(
+    tools=[grounding_tool, url_context_tool],
+    response_mime_type="text/plain",
+    response_schema=list[MarketResearchResponse]
+)
+
+
+
+def get_prompt(item_name, item_description):
+
+    prompt = f"""당신은 시장 분석 전문가입니다. '{item_name}: {item_description}' 제품/서비스의 시장 규모에 대한 정확한 데이터를 제공해주세요.
+
+                        다음 정확한 JSON 스키마 형식으로 응답해주세요:
+                        {{
+                            "market_size": {{
+                                "domestic": {{
+                                    "year_2022": "구체적인 천원단위 숫자의 금액 또는 천원단위의 숫자의 추정값",
+                                    "year_2023": "구체적인 천원단위 숫자의 금액 또는 천원단위의 숫자의 추정값", 
+                                    "year_2024": "구체적인 천원단위 숫자의 금액 또는 천원단위의 숫자의 추정값"
+                                }},
+                                "overseas": {{
+                                    "year_2022": "구체적인 천원단위 숫자의 금액 또는 천원단위의 숫자의 추정값",
+                                    "year_2023": "구체적인 천원단위 숫자의 금액 또는 천원단위의 숫자의 추정값",
+                                    "year_2024": "구체적인 천원단위 숫자의 금액 또는 천원단위의 숫자의 추정값"
+                                }}
+                            }},
+                            "is_estimated": {{
+                                "domestic": {{
+                                    "year_2022": "True 또는 False",
+                                    "year_2023": "True 또는 False",
+                                    "year_2024": "True 또는 False"
+                                }},
+                                "overseas": {{
+                                    "year_2022": "True 또는 False",x
+                                    "year_2023": "True 또는 False",
+                                    "year_2024": "True 또는 False"
+                                }}
+                            }},
+                            "estimate_reason": {{
+                                "domestic": {{
+                                    "year_2022": "추정 근거",
+                                    "year_2023": "추정 근거",
+                                    "year_2024": "추정 근거"
+                                }},
+                                "overseas": {{
+                                    "year_2022": "추정 근거",
+                                    "year_2023": "추정 근거",
+                                    "year_2024": "추정 근거"
+                                }}
+                            }},
+                            "references": {{
+                                "domestic": {{
+                                    "year_2022": "출처 URL",
+                                    "year_2023": "출처 URL",
+                                    "year_2024": "출처 URL"
+                                }},
+                                "overseas": {{
+                                    "year_2022": "출처 URL", 
+                                    "year_2023": "출처 URL",
+                                    "year_2024": "출처 URL"
+                                }}
+                            }}
+                        }}
+
+                    중요한 요구사항:
+                    1. 반드시 위의 정확한 JSON 구조를 따라야 합니다 (키 이름 변경 금지)
+                    2. 시장 규모는 반드시 구체적인 금액으로 제공 (백분율이나 출하량 제외)
+                    3. market_size 필드에는 한국 시장은 원화 단위, 해외 시장은 달러 단위, 단위 표시하지 않고 천원 단위의 숫자로만 표기
+                    4. is_estimated 필드에는 오직 추정이면 True 그렇지 않으면 False 형태로 표기
+                    5. 직접적인 시장 규모 데이터가 없는 경우:
+                    - 관련 산업 데이터, 유사 제품 시장 규모, 시장 점유율, 성장률 등을 수집
+                    - 이러한 데이터를 바탕으로 시장 규모를 합리적으로 추정
+                    - 추정 근거와 사용된 데이터 출처(URL)을 상세히 기록 [1],[2] 이러한 주석 형태가 아닌 URL 형태로 기록
+                    - 절대 citations 필드는 제공하지 않고 출처 URL을 references 필드에 매칭하여 제공, 줄바뀜 없이 제공
+                    6. 추정 시 고려사항:
+                    - 상위 카테고리 시장 규모에서 해당 제품의 예상 점유율 계산
+                    - 유사 제품군의 시장 규모와 비교 분석
+                    - 연평균 성장률(CAGR)을 활용한 추정
+                    - 인구, 경제 규모, 기술 보급률 등 거시경제 지표 활용
+                    7. 신뢰할 수 있는 출처의 URL만 제공
+                    8. 출처 URL은 유효한 웹 주소여야함. 404 not Found 오류가 발생하거나 사람이 알아볼 수 없는 URL은 제공하지 않음
+                    8. 최신 데이터 우선 제공
+                    9. 완전히 데이터를 찾을 수 없는 경우에만 "데이터없음"으로 표시
+                    10. JSON 형식 외의 다른 텍스트나 설명은 포함하지 않습니다
+                """
+    return prompt
+
+
+def get_industry_data_with_gemini(item_name,item_description, max_retries=3):
     """
     Gemini API를 사용하여 특정 물품의 국내, 해외 산업 규모 데이터를 요청
     """
@@ -34,53 +163,22 @@ def get_industry_data_with_gemini(item_name, max_retries=3):
     for attempt in range(max_retries):
         try:
             logger.debug(f"API 호출 시도 {attempt + 1}/{max_retries}")
+            # logger.info("token count:" + str(client.models.count_tokens(model="gemini-2.5-pro", contents=get_prompt(item_name, item_description))))
             response = client.models.generate_content(
-                model="gemini-2.5-pro-preview-06-05",
-                contents= f"""당신은 산업 분석 전문가입니다. 최신 데이터와 정확한 정보를 제공해주세요.
+                model="gemini-2.5-pro",
+                contents= get_prompt(item_name, item_description),
 
-                        '{item_name}' 관련 한국과 해외 년도별 시장규모를 제공해주세요.
-                        market_size는 반드시 원화이거나 달러단위의 시장규모 추이 데이터이여야 합니다. 시장규모 추이 데이터가 없다면 비어 있는 문자열로 표시해주세요.
-                        백분율은 포함하지 마세요.
-                        출하량을 포함하지 마세요.
-                        부가 설명 없이 URL만 제공해주세요.
-                        
-                        {{
-                            "market_size": {{
-                                "Korea": {{"2022":"8,100,000,000","2023":"110,000,000,000","2024":"120,000,000,000"}},
-                                "Overseas": {{"2022":"8,100,000,000","2023":"110,000,000,000","2024":"120,000,000,000"}}
-                            }},
-                            
-                            "references": {{
-                                "Korea": {{"2022":"참고자료URL","2023":"참고자료URL","2024":"참고자료URL"}},
-                                "Overseas": {{"2022":"참고자료URL","2023":"참고자료URL","2024":"참고자료URL"}}   
-                            }}
-                        }}
-
-                        가능한 한 구체적인 수치와 신뢰할 수 있는 출처를 제공해주세요.
-                        데이터 출처는 년도별로 줄바꿈으로 구분해주세요.
-                        한국,해외,2022,2023,2024년 모든 데이터를 찾아야 할 필요는 없습니다.
-                                            
-                                            """,            
-                config={
-                    "response_mime_type": "application/json",
-                    "response_schema": list[MarketSize]
-                }
+                config = config
             )
             
             logger.info(f"'{item_name}' API 호출 성공")
-            logger.debug(f"응답 길이: {len(response.text)} 문자")
+            # logger.info(f"응답: {response}")
             return response.text
                 
         except Exception as e:
-            if attempt < max_retries - 1:
-                logger.warning(f"API 호출 오류 발생: {e}")
-                logger.info(f"재시도 중... (시도 {attempt + 1}/{max_retries})")
-                time.sleep(5)
-                continue
-            else:
-                logger.error(f"API 요청 최종 실패: {str(e)}")
-                return f"API 요청 오류: {str(e)}"
-    
+            logger.error(f"API 요청 최종 실패: {str(e)}")
+            return f"API 요청 오류: {str(e)}"
+
     logger.error("최대 재시도 횟수 초과")
     return "최대 재시도 횟수 초과"
 
@@ -178,3 +276,18 @@ def parse_industry_data_with_gemini(response_text):
     except Exception as e:
         logger.error(f"데이터 파싱 중 오류 발생: {e}")
         return None
+
+
+if __name__ == "__main__":
+    # 사용 가능한 모든 모델 조회
+    # for model in client.models.list():
+    #     print(f"모델명: {model.name}")
+    #     print(f"설명: {model.display_name}")
+    # #     print("---")
+    item_name = "게임기"
+    item_description = "게임기"
+    response_text = get_industry_data_with_gemini(item_name, item_description)
+
+    parsed_data = parse_industry_data_with_gemini(response_text)
+    save_to_excel_gemini("item_info_3.xlsx", "게임기", parsed_data)     
+    
