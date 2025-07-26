@@ -1,0 +1,1179 @@
+{
+  "검사_정보": {
+    "검사_시간": "2025-07-19 17:10:42",
+    "엑셀_파일": "item_info_v0.xlsx",
+    "검사한_열": [
+      "7번째 열",
+      "11번째 열",
+      "15번째 열",
+      "19번째 열",
+      "23번째 열",
+      "27번째 열"
+    ],
+    "검사한_열_이름": [
+      "출처 (국내 2022)",
+      "출처 (국내 2023)",
+      "출처 (국내 2024)",
+      "출처 (해외 2022)",
+      "출처 (해외 2023)",
+      "출처 (해외 2024)"
+    ]
+  },
+  "통계": {
+    "검사한_열_개수": 6,
+    "URL이_있는_셀_개수": 6460,
+    "총_검사한_URL_개수": 7081,
+    "유효한_URL_개수": 6855,
+    "유효하지_않은_URL_개수": 226
+  },
+  "실패한_URL": {
+    "DNS Resolution Failed": [
+      {
+        "URL": "https://device-port.kr/websoseoleul-deo/",
+        "출처": "출처 (국내 2022)[10]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://exampledata.kr/domestic-furniture-market-2022",
+        "출처": "출처 (국내 2022)[173]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.kind.krx.co.kr/external/2021/03/23/001014/20210323003743/11011.htm",
+        "출처": "출처 (국내 2022)[326]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.koreanische-patentgerichte.com/12042",
+        "출처": "출처 (국내 2022)[554]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.dreamtoday.co.kr/news/articleView.html?idxno=47502",
+        "출처": "출처 (국내 2022)[557]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.dpg.danawa.com/news/view?boardSeq=63&listSeq=5373302",
+        "출처": "출처 (국내 2022)[608]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://m.nice.co.kr/nice/niceportal/Report/Report_View.nice?Report_Seq=186414",
+        "출처": "출처 (국내 2022)[838]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://kfa.re.kr/statistics/domestic-fashion-market",
+        "출처": "출처 (국내 2022)[1023]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.bannron.com/news/articleView.html?idxno=20406",
+        "출처": "출처 (국내 2022)[1255]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.prime-economy.com/news/articleView.html?idxno=220260",
+        "출처": "출처 (국내 2022)[1277]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://device-port.kr/websoseoleul-deo/",
+        "출처": "출처 (국내 2023)[10]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://exampledata.kr/domestic-furniture-market-2023",
+        "출처": "출처 (국내 2023)[173]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.kesis.re.kr/board.es?mid=a10306000000&bid=0060&act=view&list_no=2119&tag=&nPage=1",
+        "출처": "출처 (국내 2023)[302]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.kind.krx.co.kr/external/2021/03/23/001014/20210323003743/11011.htm",
+        "출처": "출처 (국내 2023)[326]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.dreamtoday.co.kr/news/articleView.html?idxno=47502",
+        "출처": "출처 (국내 2023)[557]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://m.nice.co.kr/nice/niceportal/Report/Report_View.nice?Report_Seq=186414",
+        "출처": "출처 (국내 2023)[838]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://kfa.re.kr/statistics/domestic-fashion-market",
+        "출처": "출처 (국내 2023)[1023]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.bannron.com/news/articleView.html?idxno=20406",
+        "출처": "출처 (국내 2023)[1255]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.prime-economy.com/news/articleView.html?idxno=220260",
+        "출처": "출처 (국내 2023)[1277]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://device-port.kr/websoseoleul-deo/",
+        "출처": "출처 (국내 2024)[10]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://exampledata.kr/domestic-furniture-market-2024",
+        "출처": "출처 (국내 2024)[173]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.kind.krx.co.kr/external/2021/03/23/001014/20210323003743/11011.htm",
+        "출처": "출처 (국내 2024)[326]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://m.nice.co.kr/nice/niceportal/Report/Report_View.nice?Report_Seq=186414",
+        "출처": "출처 (국내 2024)[838]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.koreatrade.net/",
+        "출처": "출처 (국내 2024)[935]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://kfa.re.kr/statistics/domestic-fashion-market",
+        "출처": "출처 (국내 2024)[1023]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.imirmarketresearch.com/report/leather-jacket-market/1316",
+        "출처": "출처 (국내 2024)[1043]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.bannron.com/news/articleView.html?idxno=20406",
+        "출처": "출처 (국내 2024)[1255]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.prime-economy.com/news/articleView.html?idxno=220260",
+        "출처": "출처 (국내 2024)[1277]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.imirmarketresearch.com/report/leather-jacket-market/1316",
+        "출처": "출처 (해외 2022)[1043]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.verifiedmarketreviews.com/ko/product/knitwear-market/",
+        "출처": "출처 (해외 2023)[1021]",
+        "오류_유형": "DNS Resolution Failed"
+      },
+      {
+        "URL": "https://www.imirmarketresearch.com/report/leather-jacket-market/1316",
+        "출처": "출처 (해외 2024)[1043]",
+        "오류_유형": "DNS Resolution Failed"
+      }
+    ],
+    "Page Not Found (404)": [
+      {
+        "URL": "https://www.bignox.com/blog/noxplay168541779373KU2kMscp6YkKT2FoO79/",
+        "출처": "출처 (국내 2022)[26]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://dpg.danawa.com/news/view?boardSeq=293&listSeq=5269020https://kr.aving.net/news/articleView.html?idxno=208888",
+        "출처": "출처 (국내 2022)[67]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.donga.com/news/Economy/article/all/20241028/130311159/",
+        "출처": "출처 (국내 2022)[259]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.researchnester.com/kr/reports/hydrophilic-coating-market/5003https://www.fortunebusinessinsights.com/ko/nanocoatings-market-105023",
+        "출처": "출처 (국내 2022)[283]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.sphericalinsights.com/ko/reports/south-korea-retail-sector-markethttps://www.energy-news.co.kr/news/articleView.html?idxno=92085",
+        "출처": "출처 (국내 2022)[286]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.krei.re.kr/krei/research/report/view.do?key=141749",
+        "출처": "출처 (국내 2022)[295]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.kita.net/statistics/market/SME-Elec-HomeAppliance",
+        "출처": "출처 (국내 2022)[331]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.hankyung.com/article/202402082983i",
+        "출처": "출처 (국내 2022)[385]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.hankyung.com/article/202507036572ihttps://www.chosun.com/sports/sports_general/2024/04/10/OGTZ4QL3HH6RQAN2VJ5GJKA6XY/",
+        "출처": "출처 (국내 2022)[422]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.aitimes.com/news/articleView.html?idxno=146187",
+        "출처": "출처 (국내 2022)[483]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://fashionbiz.co.kr/article/211449https://www.sedaily.com/NewsView/2GNTWA23KYhttps://www.chosun.com/sports/golf/2024/12/09/WNFA55CAJRARNPFIL2XYDJLC4A/",
+        "출처": "출처 (국내 2022)[486]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.asiae.co.kr/article/2022120714015340886https://www.newswire.co.kr/newsRead.php?no=1004200",
+        "출처": "출처 (국내 2022)[502]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://ballop.co.kr/about/about_us.htmlhttps://optimal175.com/%EC%97%AC%EB%A6%84-%EC%8B%A0%EB%B0%9C-%ED%8C%90%EB%A7%A4-%EA%B8%89%EC%A6%9D-%EA%B8%B0%ED%9B%84-%EB%B3%80%ED%99%94%EA%B0%80-%ED%8A%B8%EB%A0%8C%EB%93%9C-%EC%A3%BC%EB%8F%84-%EC%97%AC%EB%A6%84%EB%B6%80/",
+        "출처": "출처 (국내 2022)[510]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.hankyung.com/economy/article/202505119799g",
+        "출처": "출처 (국내 2022)[547]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.agrinews.co.kr/news/articleView.html?idxno=322765",
+        "출처": "출처 (국내 2022)[624]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.krei.re.kr/krei/researchReportView.do?key=67011&pageType=010101&biblioId=541249",
+        "출처": "출처 (국내 2022)[627]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.hankyung.com/life/article/202212241779i",
+        "출처": "출처 (국내 2022)[677]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.bullsone.com/newsroom/press/147",
+        "출처": "출처 (국내 2022)[733]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.agrinews.co.kr/news/articleView.html?idxno=311295",
+        "출처": "출처 (국내 2022)[803]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.korcham.net/ncom/bdesc/boardView.do?seq=12111&board_id=20&menu_id=27",
+        "출처": "출처 (국내 2022)[806]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.designdb.com/customer/news/selectBbsNttView.do?bbsNo=21&nttNo=24090&searchCtgry=&searchKrwd=&pageIndex=1",
+        "출처": "출처 (국내 2022)[856]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.donga.com/news/Economy/article/all/20250202/130953200/",
+        "출처": "출처 (국내 2022)[865]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.kita.net/statistics/marketdata",
+        "출처": "출처 (국내 2022)[887]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.mordorintelligence.kr/industry-reports/smart-home-appliances-markethttps://www.irsglobal.com/bbs/rwdboard/24646",
+        "출처": "출처 (국내 2022)[890]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.tistory.com/1126",
+        "출처": "출처 (국내 2022)[934]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.hankookilbo.com/News/Read/A2024012310380003756",
+        "출처": "출처 (국내 2022)[971]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.marketsandata.com/global-baby-high-chair-market-assessment-35",
+        "출처": "출처 (국내 2022)[971]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://biz.chosun.com/distribution/fashion/2024/12/13/42Y2YQM4LFHW7K4FINVUMC3VNU/",
+        "출처": "출처 (국내 2022)[1064]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://kpmg.com/kr/ko/home/insights/2023/02/issue-monitor-149.html",
+        "출처": "출처 (국내 2022)[1115]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.ehousing.co.kr/news/articleView.html?idxno=13735",
+        "출처": "출처 (국내 2022)[1128]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.chosun.com/economy/tech_it/2023/05/14/L7F32L6S3NHCVL6XW7LLJJJDHI/",
+        "출처": "출처 (국내 2022)[1171]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://dpg.danawa.com/news/view?boardSeq=293&listSeq=5269020https://kr.aving.net/news/articleView.html?idxno=208888",
+        "출처": "출처 (국내 2023)[67]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.donga.com/news/Economy/article/all/20241028/130311159/",
+        "출처": "출처 (국내 2023)[259]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.researchnester.com/kr/reports/hydrophilic-coating-market/5003https://www.fortunebusinessinsights.com/ko/nanocoatings-market-105023",
+        "출처": "출처 (국내 2023)[283]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.sphericalinsights.com/ko/reports/south-korea-retail-sector-markethttps://www.energy-news.co.kr/news/articleView.html?idxno=92085",
+        "출처": "출처 (국내 2023)[286]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.krei.re.kr/krei/research/report/view.do?key=141749",
+        "출처": "출처 (국내 2023)[295]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.krei.re.kr/krei/selectBbsNttView.do?key=221&bbsNo=40&nttNo=107383&searchCtgry=&searchCnd=all&searchKrwd=&pageIndex=1&integrDeptCode=",
+        "출처": "출처 (국내 2023)[313]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.kita.net/statistics/market/SME-Elec-HomeAppliance",
+        "출처": "출처 (국내 2023)[331]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.hankyung.com/article/202402082983i",
+        "출처": "출처 (국내 2023)[385]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://fashionbiz.co.kr/article/211449https://www.sedaily.com/NewsView/2GNTWA23KYhttps://www.hankyung.com/article/202503127852i",
+        "출처": "출처 (국내 2023)[486]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.asiae.co.kr/article/2022120714015340886https://www.newswire.co.kr/newsRead.php?no=1004200",
+        "출처": "출처 (국내 2023)[502]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://ballop.co.kr/about/about_us.htmlhttps://optimal175.com/%EC%97%AC%EB%A6%84-%EC%8B%A0%EB%B0%9C-%ED%8C%90%EB%A7%A4-%EA%B8%89%EC%A6%9D-%EA%B8%B0%ED%9B%84-%EB%B3%80%ED%99%94%EA%B0%80-%ED%8A%B8%EB%A0%8C%EB%93%9C-%EC%A3%BC%EB%8F%84-%EC%97%AC%EB%A6%84%EB%B6%80/",
+        "출처": "출처 (국내 2023)[510]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.mk.co.kr/news/business/10641372",
+        "출처": "출처 (국내 2023)[603]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.agrinews.co.kr/news/articleView.html?idxno=322765",
+        "출처": "출처 (국내 2023)[624]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.krei.re.kr/krei/researchReportView.do?key=67011&pageType=010101&biblioId=541249",
+        "출처": "출처 (국내 2023)[627]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.bullsone.com/newsroom/press/147",
+        "출처": "출처 (국내 2023)[733]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.agrinews.co.kr/news/articleView.html?idxno=311295",
+        "출처": "출처 (국내 2023)[803]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.designdb.com/customer/news/selectBbsNttView.do?bbsNo=21&nttNo=24090&searchCtgry=&searchKrwd=&pageIndex=1",
+        "출처": "출처 (국내 2023)[856]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.donga.com/news/Economy/article/all/20250202/130953200/",
+        "출처": "출처 (국내 2023)[865]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.kita.net/statistics/marketdata",
+        "출처": "출처 (국내 2023)[887]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.mordorintelligence.kr/industry-reports/smart-home-appliances-markethttps://www.irsglobal.com/bbs/rwdboard/24646",
+        "출처": "출처 (국내 2023)[890]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.tistory.com/1126",
+        "출처": "출처 (국내 2023)[934]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.hankookilbo.com/News/Read/A2024012310380003756",
+        "출처": "출처 (국내 2023)[971]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://biz.chosun.com/distribution/fashion/2024/12/13/42Y2YQM4LFHW7K4FINVUMC3VNU/",
+        "출처": "출처 (국내 2023)[1064]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://m.fashionn.com/board/1004/48623",
+        "출처": "출처 (국내 2023)[1065]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://kpmg.com/kr/ko/home/insights/2023/02/issue-monitor-149.html",
+        "출처": "출처 (국내 2023)[1115]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.chosun.com/economy/tech_it/2023/05/14/L7F32L6S3NHCVL6XW7LLJJJDHI/",
+        "출처": "출처 (국내 2023)[1171]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://dpg.danawa.com/news/view?boardSeq=293&listSeq=5269020https://kr.aving.net/news/articleView.html?idxno=208888",
+        "출처": "출처 (국내 2024)[67]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.donga.com/news/Economy/article/all/20241028/130311159/",
+        "출처": "출처 (국내 2024)[259]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.researchnester.com/kr/reports/hydrophilic-coating-market/5003https://www.fortunebusinessinsights.com/ko/nanocoatings-market-105023",
+        "출처": "출처 (국내 2024)[283]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.sphericalinsights.com/ko/reports/south-korea-retail-sector-markethttps://www.energy-news.co.kr/news/articleView.html?idxno=92085",
+        "출처": "출처 (국내 2024)[286]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.krei.re.kr/krei/research/report/view.do?key=141749",
+        "출처": "출처 (국내 2024)[295]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.krei.re.kr/krei/selectBbsNttView.do?key=221&bbsNo=40&nttNo=107383&searchCtgry=&searchCnd=all&searchKrwd=&pageIndex=1&integrDeptCode=",
+        "출처": "출처 (국내 2024)[313]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.kita.net/statistics/market/SME-Elec-HomeAppliance",
+        "출처": "출처 (국내 2024)[331]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://fashionbiz.co.kr/article/211449https://www.sedaily.com/NewsView/2GNTWA23KYhttps://www.hankyung.com/article/202503127852i",
+        "출처": "출처 (국내 2024)[486]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.asiae.co.kr/article/2022120714015340886https://www.newswire.co.kr/newsRead.php?no=1004200",
+        "출처": "출처 (국내 2024)[502]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://ballop.co.kr/about/about_us.htmlhttps://optimal175.com/%EC%97%AC%EB%A6%84-%EC%8B%A0%EB%B0%9C-%ED%8C%90%EB%A7%A4-%EA%B8%89%EC%A6%9D-%EA%B8%B0%ED%9B%84-%EB%B3%80%ED%99%94%EA%B0%80-%ED%8A%B8%EB%A0%8C%EB%93%9C-%EC%A3%BC%EB%8F%84-%EC%97%AC%EB%A6%84%EB%B6%80/",
+        "출처": "출처 (국내 2024)[510]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.hankyung.com/economy/article/202505119799g",
+        "출처": "출처 (국내 2024)[547]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.agrinews.co.kr/news/articleView.html?idxno=322765",
+        "출처": "출처 (국내 2024)[624]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.krei.re.kr/krei/researchReportView.do?key=67011&pageType=010101&biblioId=541249",
+        "출처": "출처 (국내 2024)[627]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.bullsone.com/newsroom/press/147",
+        "출처": "출처 (국내 2024)[733]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.agrinews.co.kr/news/articleView.html?idxno=311295",
+        "출처": "출처 (국내 2024)[803]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.designdb.com/customer/news/selectBbsNttView.do?bbsNo=21&nttNo=24090&searchCtgry=&searchKrwd=&pageIndex=1",
+        "출처": "출처 (국내 2024)[856]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.donga.com/news/Economy/article/all/20250202/130953200/",
+        "출처": "출처 (국내 2024)[865]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.kita.net/statistics/marketdata",
+        "출처": "출처 (국내 2024)[887]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.mordorintelligence.kr/industry-reports/smart-home-appliances-markethttps://www.irsglobal.com/bbs/rwdboard/24646",
+        "출처": "출처 (국내 2024)[890]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.tistory.com/1126",
+        "출처": "출처 (국내 2024)[934]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.hankookilbo.com/News/Read/A2024012310380003756",
+        "출처": "출처 (국내 2024)[971]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://biz.chosun.com/distribution/fashion/2024/12/13/42Y2YQM4LFHW7K4FINVUMC3VNU/",
+        "출처": "출처 (국내 2024)[1064]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://kpmg.com/kr/ko/home/insights/2023/02/issue-monitor-149.html",
+        "출처": "출처 (국내 2024)[1115]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.chosun.com/economy/tech_it/2023/05/14/L7F32L6S3NHCVL6XW7LLJJJDHI/",
+        "출처": "출처 (국내 2024)[1171]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.mordorintelligence.kr/industry-reports/tablet-pc-markethttps://m.ceoscoredaily.com/page/view/2025020717414562431",
+        "출처": "출처 (해외 2022)[27]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://artbasel.com/about-the-art-market",
+        "출처": "출처 (해외 2022)[473]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.krei.re.kr/krei/researchReportView.do?key=67011&pageType=010101&biblioId=541249",
+        "출처": "출처 (해외 2022)[627]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.economidaily.com/view.php?ud=202409241539463943fcd949a21_27",
+        "출처": "출처 (해외 2022)[787]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.sphericalinsights.com/ko/reports/south-korea-major-home-appliances-markethttps://www.mordorintelligence.kr/industry-reports/south-korea-major-home-appliances-market",
+        "출처": "출처 (해외 2022)[827]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.factmr.com/report/cutlery-market",
+        "출처": "출처 (해외 2022)[888]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.marketsandata.com/global-baby-high-chair-market-assessment-35",
+        "출처": "출처 (해외 2022)[971]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.statista.com/statistics/global-womens-apparel-market-size",
+        "출처": "출처 (해외 2022)[1036]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.researchandmarkets.com/report/mens-sleepwear-market",
+        "출처": "출처 (해외 2022)[1089]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.factmr.com/report/9959/decorative-film-and-foil-market",
+        "출처": "출처 (해외 2022)[1121]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.alliedmarketresearch.com/travel-accommodation-market-A15795",
+        "출처": "출처 (해외 2022)[1204]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://biz.chosun.com/stock/c-biz_bot/2024/09/24/OLUP4SS5TVZHZKPHTRVBVJ4DBU/",
+        "출처": "출처 (해외 2022)[1257]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.mordorintelligence.kr/industry-reports/tablet-pc-markethttps://m.ceoscoredaily.com/page/view/2025020717414562431",
+        "출처": "출처 (해외 2023)[27]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.researchnester.com/kr/reports/industrial-vacuum-cleaner-market/5308https://www.fortunebusinessinsights.com/ko/vacuum-cleaner-market-109213",
+        "출처": "출처 (해외 2023)[333]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://artbasel.com/about-the-art-market",
+        "출처": "출처 (해외 2023)[473]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.krei.re.kr/krei/researchReportView.do?key=67011&pageType=010101&biblioId=541249",
+        "출처": "출처 (해외 2023)[627]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.ifpi.org/ifpi-releases-global-music-report-2024/",
+        "출처": "출처 (해외 2023)[677]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.economidaily.com/view.php?ud=202409241539463943fcd949a21_27",
+        "출처": "출처 (해외 2023)[787]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.factmr.com/report/cutlery-market",
+        "출처": "출처 (해외 2023)[888]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.statista.com/statistics/global-womens-apparel-market-growth",
+        "출처": "출처 (해외 2023)[1036]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.researchandmarkets.com/report/mens-sleepwear-market",
+        "출처": "출처 (해외 2023)[1089]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.factmr.com/report/9959/decorative-film-and-foil-market",
+        "출처": "출처 (해외 2023)[1121]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://artbasel.com/about-the-art-market",
+        "출처": "출처 (해외 2024)[473]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.krei.re.kr/krei/researchReportView.do?key=67011&pageType=010101&biblioId=541249",
+        "출처": "출처 (해외 2024)[627]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.ifpi.org/ifpi-releases-global-music-report-2024/",
+        "출처": "출처 (해외 2024)[677]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.economidaily.com/view.php?ud=202409241539463943fcd949a21_27",
+        "출처": "출처 (해외 2024)[787]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.sphericalinsights.com/ko/reports/south-korea-major-home-appliances-markethttps://www.mordorintelligence.kr/industry-reports/south-korea-major-home-appliances-market",
+        "출처": "출처 (해외 2024)[827]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.factmr.com/report/cutlery-market",
+        "출처": "출처 (해외 2024)[888]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.statista.com/statistics/global-fashion-market-forecast",
+        "출처": "출처 (해외 2024)[1036]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.researchandmarkets.com/report/mens-sleepwear-market",
+        "출처": "출처 (해외 2024)[1089]",
+        "오류_유형": "Page Not Found (404)"
+      },
+      {
+        "URL": "https://www.factmr.com/report/9959/decorative-film-and-foil-market",
+        "출처": "출처 (해외 2024)[1121]",
+        "오류_유형": "Page Not Found (404)"
+      }
+    ],
+    "Connection Refused": [
+      {
+        "URL": "https://www.lafent.com/inews/news_view.html?news_id=133533",
+        "출처": "출처 (국내 2022)[274]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.sfi.co.kr/main/view.php?l_cd=1&m_cd=140&s_cd=&page=1&search_word=%ED%8C%A8%EC%85%98%EC%8B%9C%EC%9E%A5&search_type=&seq=5535",
+        "출처": "출처 (국내 2022)[310]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "http://wiki.hash.kr/index.php/%EB%A0%8C%ED%83%88%EC%97%85",
+        "출처": "출처 (국내 2022)[535]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.econotelling.com/news/articleView.html?idxno=10555",
+        "출처": "출처 (국내 2022)[584]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.theliving.co.kr/news/articleView.html?idxno=21776",
+        "출처": "출처 (국내 2022)[974]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.goover.co.kr/magazine/view.php?idx=3268",
+        "출처": "출처 (국내 2022)[1040]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.theliving.co.kr/news/articleView.html?idxno=25272",
+        "출처": "출처 (국내 2022)[1121]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.fundingp.com/project/1560",
+        "출처": "출처 (국내 2022)[1138]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.theliving.co.kr/news/articleView.html?idxno=21776",
+        "출처": "출처 (국내 2022)[1159]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.investseoul.org/investment-guide/seoul-strategic-industries/digital-contents/",
+        "출처": "출처 (국내 2022)[1216]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.cmn.co.kr/sub/news/news_view.asp?news_idx=41452",
+        "출처": "출처 (국내 2022)[1276]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.lafent.com/inews/news_view.html?news_id=133533",
+        "출처": "출처 (국내 2023)[274]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.sfi.co.kr/main/view.php?l_cd=1&m_cd=140&s_cd=&page=1&search_word=%ED%8C%A8%EC%85%98%EC%8B%9C%EC%9E%A5&search_type=&seq=5535",
+        "출처": "출처 (국내 2023)[310]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "http://wiki.hash.kr/index.php/%EB%A0%8C%ED%83%88%EC%97%85",
+        "출처": "출처 (국내 2023)[535]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.econotelling.com/news/articleView.html?idxno=7961",
+        "출처": "출처 (국내 2023)[574]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.econotelling.com/news/articleView.html?idxno=10555",
+        "출처": "출처 (국내 2023)[584]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.minimotors.co.kr/%EC%A0%84%EB%8F%99%ED%82%A5%EB%B3%B4%EB%93%9C-%EC%9D%B4%EC%9A%A9-%ED%98%84%ED%99%A9-%EB%B6%84%EC%84%9D-%EA%B5%AD%EB%82%B4-%EC%8B%9C%EC%9E%A5-%EB%8F%99%ED%96%A5-%EB%B0%8F-%EB%AF%B8%EB%9E%98-%EC%A0%84/",
+        "출처": "출처 (국내 2023)[736]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.theliving.co.kr/news/articleView.html?idxno=21776",
+        "출처": "출처 (국내 2023)[974]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://tnnews.co.kr/archives/156255",
+        "출처": "출처 (국내 2023)[1016]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.goover.co.kr/magazine/view.php?idx=3268",
+        "출처": "출처 (국내 2023)[1040]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.theliving.co.kr/news/articleView.html?idxno=25272",
+        "출처": "출처 (국내 2023)[1121]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.theliving.co.kr/news/articleView.html?idxno=24021",
+        "출처": "출처 (국내 2023)[1128]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.theliving.co.kr/news/articleView.html?idxno=23049",
+        "출처": "출처 (국내 2023)[1129]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.fundingp.com/project/1560",
+        "출처": "출처 (국내 2023)[1138]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.theliving.co.kr/news/articleView.html?idxno=21776",
+        "출처": "출처 (국내 2023)[1159]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.investseoul.org/investment-guide/seoul-strategic-industries/digital-contents/",
+        "출처": "출처 (국내 2023)[1216]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.cmn.co.kr/sub/news/news_view.asp?news_idx=41452",
+        "출처": "출처 (국내 2023)[1276]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.lafent.com/inews/news_view.html?news_id=133533",
+        "출처": "출처 (국내 2024)[274]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.sfi.co.kr/main/view.php?l_cd=1&m_cd=140&s_cd=&page=1&search_word=%ED%8C%A8%EC%85%98%EC%8B%9C%EC%9E%A5&search_type=&seq=5535",
+        "출처": "출처 (국내 2024)[310]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "http://wiki.hash.kr/index.php/%EB%A0%8C%ED%83%88%EC%97%85",
+        "출처": "출처 (국내 2024)[535]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.econotelling.com/news/articleView.html?idxno=7961",
+        "출처": "출처 (국내 2024)[574]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.econotelling.com/news/articleView.html?idxno=10555",
+        "출처": "출처 (국내 2024)[584]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.minimotors.co.kr/%EC%A0%84%EB%8F%99%ED%82%A5%EB%B3%B4%EB%93%9C-%EC%9D%B4%EC%9A%A9-%ED%98%84%ED%99%A9-%EB%B6%84%EC%84%9D-%EA%B5%AD%EB%82%B4-%EC%8B%9C%EC%9E%A5-%EB%8F%99%ED%96%A5-%EB%B0%8F-%EB%AF%B8%EB%9E%98-%EC%A0%84/",
+        "출처": "출처 (국내 2024)[736]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.theliving.co.kr/news/articleView.html?idxno=21776",
+        "출처": "출처 (국내 2024)[974]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://tnnews.co.kr/archives/156255",
+        "출처": "출처 (국내 2024)[1016]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.goover.co.kr/magazine/view.php?idx=3268",
+        "출처": "출처 (국내 2024)[1040]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.theliving.co.kr/news/articleView.html?idxno=23447",
+        "출처": "출처 (국내 2024)[1118]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.theliving.co.kr/news/articleView.html?idxno=25272",
+        "출처": "출처 (국내 2024)[1121]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.theliving.co.kr/news/articleView.html?idxno=24021",
+        "출처": "출처 (국내 2024)[1128]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.fundingp.com/project/1560",
+        "출처": "출처 (국내 2024)[1138]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.theliving.co.kr/news/articleView.html?idxno=21776",
+        "출처": "출처 (국내 2024)[1159]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.investseoul.org/investment-guide/seoul-strategic-industries/digital-contents/",
+        "출처": "출처 (국내 2024)[1216]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.cmn.co.kr/sub/news/news_view.asp?news_idx=41452",
+        "출처": "출처 (국내 2024)[1276]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.beautynury.com/news/view/104302/cat/20",
+        "출처": "출처 (해외 2022)[1270]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://theprintschool.com.au/blog/graphic-design-statistics/",
+        "출처": "출처 (해외 2023)[856]",
+        "오류_유형": "Connection Refused"
+      },
+      {
+        "URL": "https://www.goover.ai/report/202503/go-public-report-ko-522dcdb2-079f-4c59-af72-f1d99e087de2-0-0.html",
+        "출처": "출처 (해외 2023)[1246]",
+        "오류_유형": "Connection Refused"
+      }
+    ],
+    "Not Acceptable (406)": [
+      {
+        "URL": "https://www.kati.net/news/view/274",
+        "출처": "출처 (국내 2022)[612]",
+        "오류_유형": "Not Acceptable (406)"
+      },
+      {
+        "URL": "https://www.kati.net/news/view/274",
+        "출처": "출처 (국내 2023)[612]",
+        "오류_유형": "Not Acceptable (406)"
+      },
+      {
+        "URL": "https://www.kati.net/news/view/274",
+        "출처": "출처 (국내 2024)[612]",
+        "오류_유형": "Not Acceptable (406)"
+      }
+    ],
+    "Bad Request (400)": [
+      {
+        "URL": "https://www.hsad.co.kr/archives/33923",
+        "출처": "출처 (국내 2022)[693]",
+        "오류_유형": "Bad Request (400)"
+      },
+      {
+        "URL": "https://www.hsad.co.kr/archives/33923",
+        "출처": "출처 (국내 2023)[693]",
+        "오류_유형": "Bad Request (400)"
+      },
+      {
+        "URL": "https://www.hsad.co.kr/archives/33923",
+        "출처": "출처 (국내 2024)[693]",
+        "오류_유형": "Bad Request (400)"
+      }
+    ],
+    "Server Error (500)": [
+      {
+        "URL": "https://www.icrowdkorean.com/2024/04/18/%ED%9C%B4%EB%8C%80%EC%9A%A9-%EC%A0%95%EC%88%98%EA%B8%B0-%EC%8B%9C%EC%9E%A5%EC%9D%80-2032-%EB%85%84%EA%B9%8C%EC%A7%80-10-50-%EC%9D%98-cagr%EB%A1%9C-%ED%99%95%EC%9E%A5-%EB%90%A0-%EA%B2%83%EC%9E%85/",
+        "출처": "출처 (국내 2022)[949]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.aladin.co.kr/m/mproduct.aspx?ItemId=335257188",
+        "출처": "출처 (국내 2022)[958]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.icrowdkorean.com/2024/04/18/%ED%9C%B4%EB%8C%80%EC%9A%A9-%EC%A0%95%EC%88%98%EA%B8%B0-%EC%8B%9C%EC%9E%A5%EC%9D%80-2032-%EB%85%84%EA%B9%8C%EC%A7%80-10-50-%EC%9D%98-cagr%EB%A1%9C-%ED%99%95%EC%9E%A5-%EB%90%A0-%EA%B2%83%EC%9E%85/",
+        "출처": "출처 (국내 2023)[949]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.aladin.co.kr/m/mproduct.aspx?ItemId=335257188",
+        "출처": "출처 (국내 2023)[958]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.icrowdkorean.com/2024/04/18/%ED%9C%B4%EB%8C%80%EC%9A%A9-%EC%A0%95%EC%88%98%EA%B8%B0-%EC%8B%9C%EC%9E%A5%EC%9D%80-2032-%EB%85%84%EA%B9%8C%EC%A7%80-10-50-%EC%9D%98-cagr%EB%A1%9C-%ED%99%95%EC%9E%A5-%EB%90%A0-%EA%B2%83%EC%9E%85/",
+        "출처": "출처 (국내 2024)[949]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.aladin.co.kr/m/mproduct.aspx?ItemId=335257188",
+        "출처": "출처 (국내 2024)[958]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=302942499",
+        "출처": "출처 (해외 2022)[172]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.emergenresearch.com/ko/press-release/%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%9D%B8%ED%84%B0%EB%9E%99%ED%8B%B0%EB%B8%8C-%ED%99%94%EC%9D%B4%ED%8A%B8-%EB%B3%B4%EB%93%9C-%EC%8B%9C%EC%9E%A5",
+        "출처": "출처 (해외 2022)[184]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://reads.alibaba.com/ko/mens-skincare-insights-the-top-trends-of-the-year/https://www.gminsights.com/ko/industry-analysis/men-skin-care-products-market",
+        "출처": "출처 (해외 2022)[199]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.icrowdkorean.com/2024/09/30/%EA%B7%9C%EC%A1%B0%ED%86%A0-%EC%8B%9C%EC%9E%A5-%EA%B7%9C%EB%AA%A8-%EB%B0%8F-%EC%A0%90%EC%9C%A0%EC%9C%A8%EC%9D%80-2032%EB%85%84%EA%B9%8C%EC%A7%80-3-42%EC%9D%98-%EC%97%B0%ED%8F%89%EA%B7%A0-%EC%84%B1/",
+        "출처": "출처 (해외 2022)[713]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.icrowdkorean.com/2024/05/24/%EB%B2%A0%EC%9D%B4%ED%82%B9-%EB%AF%B9%EC%8A%A4-%EC%8B%9C%EC%9E%A5-%EB%8F%99%ED%96%A5-%ED%98%81%EC%8B%A0%EA%B3%BC-%EC%86%8C%EB%B9%94%EC%9E%90-%EC%84%A0%ED%98%B8%EB%8F%84/",
+        "출처": "출처 (해외 2022)[899]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.icrowdkorean.com/2024/04/18/%ED%9C%B4%EB%8C%80%EC%9A%A9-%EC%A0%95%EC%88%98%EA%B8%B0-%EC%8B%9C%EC%9E%A5%EC%9D%80-2032-%EB%85%84%EA%B9%8C%EC%A7%80-10-50-%EC%9D%98-cagr%EB%A1%9C-%ED%99%95%EC%9E%A5-%EB%90%A0-%EA%B2%83%EC%9E%85/",
+        "출처": "출처 (해외 2022)[949]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=302942499",
+        "출처": "출처 (해외 2023)[172]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.icrowdkorean.com/2024/09/30/%EA%B7%9C%EC%A1%B0%ED%86%A0-%EC%8B%9C%EC%9E%A5-%EA%B7%9C%EB%AA%A8-%EB%B0%8F-%EC%A0%90%EC%9C%A0%EC%9C%A8%EC%9D%80-2032%EB%85%84%EA%B9%8C%EC%A7%80-3-42%EC%9D%98-%EC%97%B0%ED%8F%89%EA%B7%A0-%EC%84%B1/",
+        "출처": "출처 (해외 2023)[713]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.icrowdkorean.com/2024/05/24/%EB%B2%A0%EC%9D%B4%ED%82%B9-%EB%AF%B9%EC%8A%A4-%EC%8B%9C%EC%9E%A5-%EB%8F%99%ED%96%A5-%ED%98%81%EC%8B%A0%EA%B3%BC-%EC%86%8C%EB%B9%94%EC%9E%90-%EC%84%A0%ED%98%B8%EB%8F%84/",
+        "출처": "출처 (해외 2023)[899]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.icrowdkorean.com/2024/04/18/%ED%9C%B4%EB%8C%80%EC%9A%A9-%EC%A0%95%EC%88%98%EA%B8%B0-%EC%8B%9C%EC%9E%A5%EC%9D%80-2032-%EB%85%84%EA%B9%8C%EC%A7%80-10-50-%EC%9D%98-cagr%EB%A1%9C-%ED%99%95%EC%9E%A5-%EB%90%A0-%EA%B2%83%EC%9E%85/",
+        "출처": "출처 (해외 2023)[949]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=302942499",
+        "출처": "출처 (해외 2024)[172]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.icrowdkorean.com/2024/09/30/%EA%B7%9C%EC%A1%B0%ED%86%A0-%EC%8B%9C%EC%9E%A5-%EA%B7%9C%EB%AA%A8-%EB%B0%8F-%EC%A0%90%EC%9C%A0%EC%9C%A8%EC%9D%80-2032%EB%85%84%EA%B9%8C%EC%A7%80-3-42%EC%9D%98-%EC%97%B0%ED%8F%89%EA%B7%A0-%EC%84%B1/",
+        "출처": "출처 (해외 2024)[713]",
+        "오류_유형": "Server Error (500)"
+      },
+      {
+        "URL": "https://www.icrowdkorean.com/2024/04/18/%ED%9C%B4%EB%8C%80%EC%9A%A9-%EC%A0%95%EC%88%98%EA%B8%B0-%EC%8B%9C%EC%9E%A5%EC%9D%80-2032-%EB%85%84%EA%B9%8C%EC%A7%80-10-50-%EC%9D%98-cagr%EB%A1%9C-%ED%99%95%EC%9E%A5-%EB%90%A0-%EA%B2%83%EC%9E%85/",
+        "출처": "출처 (해외 2024)[949]",
+        "오류_유형": "Server Error (500)"
+      }
+    ],
+    "Access Forbidden (403)": [
+      {
+        "URL": "https://www.se.com/kr/ko/about-us/newsroom/news/press-releases/-%EC%9D%B8%ED%84%B0%EB%B7%B0-%EB%A9%94%EC%9D%B4%EC%A0%80-%EC%9E%90%EB%8F%99%ED%99%94-%EA%B8%B0%EC%97%85%EB%93%A4%EC%9D%98-2024-%EC%8A%A4%EB%A7%88%ED%8A%B8-%ED%8C%A9%ED%86%A0%EB%A6%AC-%EC%8B%9C%EC%9E%A5%EC%A0%84%EB%9E%B5-%EC%8A%88%EB%82%98%EC%9D%B4%EB%8D%94-%EC%9D%BC%EB%A0%89%ED%8A%B8%EB%A6%AD-%EC%BD%94%EB%A6%AC%EC%95%84-65a0bdc95b1ec433440dbd27",
+        "출처": "출처 (국내 2022)[1107]",
+        "오류_유형": "Access Forbidden (403)"
+      },
+      {
+        "URL": "https://www.se.com/kr/ko/about-us/newsroom/news/press-releases/-%EC%9D%B8%ED%84%B0%EB%B7%B0-%EB%A9%94%EC%9D%B4%EC%A0%80-%EC%9E%90%EB%8F%99%ED%99%94-%EA%B8%B0%EC%97%85%EB%93%A4%EC%9D%98-2024-%EC%8A%A4%EB%A7%88%ED%8A%B8-%ED%8C%A9%ED%86%A0%EB%A6%AC-%EC%8B%9C%EC%9E%A5%EC%A0%84%EB%9E%B5-%EC%8A%88%EB%82%98%EC%9D%B4%EB%8D%94-%EC%9D%BC%EB%A0%89%ED%8A%B8%EB%A6%AD-%EC%BD%94%EB%A6%AC%EC%95%84-65a0bdc95b1ec433440dbd27",
+        "출처": "출처 (국내 2023)[1107]",
+        "오류_유형": "Access Forbidden (403)"
+      },
+      {
+        "URL": "https://www.se.com/kr/ko/about-us/newsroom/news/press-releases/-%EC%9D%B8%ED%84%B0%EB%B7%B0-%EB%A9%94%EC%9D%B4%EC%A0%80-%EC%9E%90%EB%8F%99%ED%99%94-%EA%B8%B0%EC%97%85%EB%93%A4%EC%9D%98-2024-%EC%8A%A4%EB%A7%88%ED%8A%B8-%ED%8C%A9%ED%86%A0%EB%A6%AC-%EC%8B%9C%EC%9E%A5%EC%A0%84%EB%9E%B5-%EC%8A%88%EB%82%98%EC%9D%B4%EB%8D%94-%EC%9D%BC%EB%A0%89%ED%8A%B8%EB%A6%AD-%EC%BD%94%EB%A6%AC%EC%95%84-65a0bdc95b1ec433440dbd27",
+        "출처": "출처 (국내 2024)[1107]",
+        "오류_유형": "Access Forbidden (403)"
+      },
+      {
+        "URL": "https://seo.goover.ai/report/202502/go-public-report-ko-de984093-8bd8-4894-bcae-b45f04769c0d-0-0.htmlhttps://www.fortunebusinessinsights.com/ko/dental-market-106251",
+        "출처": "출처 (해외 2022)[458]",
+        "오류_유형": "Access Forbidden (403)"
+      },
+      {
+        "URL": "https://www.spglobal.com/marketintelligence/en/news-insights/research/2022/2022-in-review-2023-forecast-for-global-markets",
+        "출처": "출처 (해외 2022)[1197]",
+        "오류_유형": "Access Forbidden (403)"
+      },
+      {
+        "URL": "https://seo.goover.ai/report/202502/go-public-report-ko-de984093-8bd8-4894-bcae-b45f04769c0d-0-0.htmlhttps://www.fortunebusinessinsights.com/ko/dental-market-106251",
+        "출처": "출처 (해외 2023)[458]",
+        "오류_유형": "Access Forbidden (403)"
+      },
+      {
+        "URL": "https://www.spglobal.com/marketintelligence/en/news-insights/research/2023/2023-global-market-outlook",
+        "출처": "출처 (해외 2023)[1197]",
+        "오류_유형": "Access Forbidden (403)"
+      },
+      {
+        "URL": "https://www.spglobal.com/marketintelligence/en/news-insights/research/2024/2024-global-market-outlook",
+        "출처": "출처 (해외 2024)[1197]",
+        "오류_유형": "Access Forbidden (403)"
+      }
+    ],
+    "Unauthorized (401)": [
+      {
+        "URL": "https://www.marketwatch.com/press-release/smart-fitness-equipment-market-growth-to-reach-usd-15-billion-by-2030-2023-06-20",
+        "출처": "출처 (해외 2022)[526]",
+        "오류_유형": "Unauthorized (401)"
+      },
+      {
+        "URL": "https://www.marketwatch.com/press-release/smart-fitness-equipment-market-growth-to-reach-usd-15-billion-by-2030-2023-06-20",
+        "출처": "출처 (해외 2023)[526]",
+        "오류_유형": "Unauthorized (401)"
+      },
+      {
+        "URL": "https://www.marketwatch.com/press-release/smart-fitness-equipment-market-growth-to-reach-usd-15-billion-by-2030-2023-06-20",
+        "출처": "출처 (해외 2024)[526]",
+        "오류_유형": "Unauthorized (401)"
+      }
+    ],
+    "Server Error (502)": [
+      {
+        "URL": "https://www.vantagemarketresearch.com/ko/industry-report/hearing-aids-market-1785",
+        "출처": "출처 (해외 2024)[96]",
+        "오류_유형": "Server Error (502)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+[
+    {
+        "index": 1,
+        "code_name": "스마트 허브",
+        "response": "{\n    \"domestic_company\": {\n        \"company_name\": \"헤이홈 (고퀄)\",\n        \"company_url\": \"https://hej.life/\",\n        \"company_description\": \"누구나 쉽고 편리하게 사용하는 스마트홈 제품을 만드는 한국 기업\",\n        \"company_best_product\": \"헤이홈 스마트 허브 미니\",\n        \"company_best_product_url\": \"https://hej.life/goods/goods_view.php?goodsNo=1000000015\",\n        \"company_best_product_description\": \"헤이홈 기기들을 연결하고 외부에서도 제어할 수 있게 하는 허브\"\n    },\n    \"global_company\": {\n        \"company_name\": \"Homey (Athom B.V.)\",\n        \"company_url\": \"https://homey.app/\",\n        \"company_description\": \"네덜란드 기반 스마트홈 플랫폼으로, 최고의 기기 연결성을 제공\",\n        \"company_best_product\": \"Homey Pro (Early 2023)\",\n        \"company_best_product_url\": \"https://homey.app/en-us/homey-pro/\",\n        \"company_best_product_description\": \"8가지 무선 기술로 5만개 이상 스마트 기기를 연결하는 허브\"\n    }\n}",
+        "status": "success"
+    }
+]

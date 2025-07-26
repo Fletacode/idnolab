@@ -11,7 +11,7 @@ if __name__ == "__main__":
         df = pd.read_excel("item_info_trend.xlsx", sheet_name="Sheet1")
         df.astype(object)
         for index, row in df.iterrows():
-            if index < 240:
+            if index == 0:
                 continue
             
             trend_companies = get_trend_companies_with_gemini(row['code_name'], row['개념설명'])
