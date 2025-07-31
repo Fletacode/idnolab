@@ -132,17 +132,8 @@ def get_trend_companies_with_gemini(item_name, item_description, max_retries=3):
             return response.text
                 
         except Exception as e:
-            if attempt < max_retries - 1:
-                logger.error(f"API 호출 오류 발생: {e}")
-                logger.debug(f"재시도 중... (시도 {attempt + 1}/{max_retries})")
-                time.sleep(5)
-                continue
-            else:
-                logger.error(f"API 요청 최종 실패: {str(e)}")
-                return f"API 요청 오류: {str(e)}"
-    
-    logger.error("최대 재시도 횟수 초과")
-    return "최대 재시도 횟수 초과"
+            logger.error(f"API 호출 오류 발생: {e} {response.text}")
+            raise e
 
 
 def parse_trend_companies_with_gemini(response_text):
@@ -194,9 +185,7 @@ def parse_trend_companies_with_gemini(response_text):
             return response_text
             
     except Exception as e:
-        logger.error(f"트렌드 기업 데이터 파싱 중 오류 발생: {e}")
-        logger.debug(f"파싱 실패한 텍스트: {response_text[:200]}...")
-        return None
+        raise e
 
 
 if __name__ == "__main__":
