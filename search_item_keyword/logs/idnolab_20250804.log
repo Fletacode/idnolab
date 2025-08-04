@@ -1,0 +1,173 @@
+2025-08-04 11:05:01 - __main__ - INFO - <module>:273 - 엑셀 파일 읽기: item_info_keyword_v1.0.xlsx
+2025-08-04 11:05:02 - __main__ - INFO - validate_keyword_data:184 - 키워드 데이터 검증 시작
+2025-08-04 11:05:02 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 스마트 허브 - 사물인터넷
+2025-08-04 11:05:04 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 사물인터넷 - 점수: 27/30
+2025-08-04 11:05:05 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 스마트 허브 - 스마트 스피커
+2025-08-04 11:05:08 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 스마트 스피커 - 점수: 25/30
+2025-08-04 11:05:09 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 스마트 허브 - 인공지능
+2025-08-04 11:05:11 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 인공지능 - 점수: 25/30
+2025-08-04 11:05:12 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 공유기 - Wi-Fi 6
+2025-08-04 11:05:14 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: Wi-Fi 6 - 점수: 27/30
+2025-08-04 11:05:15 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 공유기 - Wi-Fi 5
+2025-08-04 11:05:17 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: Wi-Fi 5 - 점수: 25/30
+2025-08-04 11:05:18 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 공유기 - 6Wresearch
+2025-08-04 11:05:21 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 6Wresearch - 점수: 25/30
+2025-08-04 11:05:22 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 노트북 - TFT LCD
+2025-08-04 11:05:23 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: TFT LCD - 점수: 18/30
+2025-08-04 11:05:24 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 노트북 - XGA
+2025-08-04 11:06:54 - __main__ - INFO - <module>:278 - 엑셀 파일 읽기: item_info_keyword_v1.0.xlsx
+2025-08-04 11:06:54 - __main__ - INFO - validate_keyword_data:189 - 키워드 데이터 검증 시작
+2025-08-04 11:06:54 - __main__ - INFO - validate_keyword_data:208 - 검증 중: 스마트 허브 - 사물인터넷
+2025-08-04 11:06:55 - __main__ - ERROR - validate_keyword_with_gemini:137 - 검증 API 호출 오류 (시도 1/3): 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': "Tool use with a response mime type: 'application/json' is unsupported", 'status': 'INVALID_ARGUMENT'}}
+2025-08-04 11:06:57 - __main__ - ERROR - validate_keyword_with_gemini:137 - 검증 API 호출 오류 (시도 2/3): 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': "Tool use with a response mime type: 'application/json' is unsupported", 'status': 'INVALID_ARGUMENT'}}
+2025-08-04 11:08:59 - __main__ - INFO - <module>:280 - 엑셀 파일 읽기: item_info_keyword_v1.0.xlsx
+2025-08-04 11:08:59 - __main__ - INFO - validate_keyword_data:191 - 키워드 데이터 검증 시작
+2025-08-04 11:08:59 - __main__ - INFO - validate_keyword_data:210 - 검증 중: 스마트 허브 - 사물인터넷
+2025-08-04 11:09:00 - __main__ - ERROR - validate_keyword_with_gemini:139 - 검증 API 호출 오류 (시도 1/3): 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': "Tool use with a response mime type: 'application/json' is unsupported", 'status': 'INVALID_ARGUMENT'}}
+2025-08-04 11:09:21 - __main__ - INFO - <module>:280 - 엑셀 파일 읽기: item_info_keyword_v1.0.xlsx
+2025-08-04 11:09:21 - __main__ - INFO - validate_keyword_data:191 - 키워드 데이터 검증 시작
+2025-08-04 11:09:21 - __main__ - INFO - validate_keyword_data:210 - 검증 중: 스마트 허브 - 사물인터넷
+2025-08-04 11:10:13 - __main__ - INFO - validate_keyword_data:233 - 검증 완료: 사물인터넷 - 점수: 30/30
+2025-08-04 11:10:14 - __main__ - INFO - validate_keyword_data:210 - 검증 중: 스마트 허브 - 스마트 스피커
+2025-08-04 11:10:54 - __main__ - INFO - validate_keyword_data:233 - 검증 완료: 스마트 스피커 - 점수: 30/30
+2025-08-04 11:10:55 - __main__ - INFO - validate_keyword_data:210 - 검증 중: 스마트 허브 - 인공지능
+2025-08-04 11:11:39 - __main__ - INFO - validate_keyword_data:233 - 검증 완료: 인공지능 - 점수: 30/30
+2025-08-04 11:11:40 - __main__ - INFO - validate_keyword_data:210 - 검증 중: 공유기 - Wi-Fi 6
+2025-08-04 11:12:17 - __main__ - INFO - validate_keyword_data:233 - 검증 완료: Wi-Fi 6 - 점수: 30/30
+2025-08-04 11:12:18 - __main__ - INFO - validate_keyword_data:210 - 검증 중: 공유기 - Wi-Fi 5
+2025-08-04 11:12:50 - __main__ - INFO - validate_keyword_data:233 - 검증 완료: Wi-Fi 5 - 점수: 30/30
+2025-08-04 11:12:51 - __main__ - INFO - validate_keyword_data:210 - 검증 중: 공유기 - 6Wresearch
+2025-08-04 11:14:37 - __main__ - INFO - <module>:275 - 엑셀 파일 읽기: item_info_keyword_v1.0.xlsx
+2025-08-04 11:14:38 - __main__ - INFO - validate_keyword_data:184 - 키워드 데이터 검증 시작
+2025-08-04 11:14:38 - __main__ - INFO - validate_keyword_data:205 - 검증 중: 소프트웨어 - 소프트웨어 산업
+2025-08-04 11:14:56 - __main__ - INFO - <module>:275 - 엑셀 파일 읽기: item_info_keyword_v1.0.xlsx
+2025-08-04 11:14:56 - __main__ - INFO - validate_keyword_data:184 - 키워드 데이터 검증 시작
+2025-08-04 11:14:56 - __main__ - INFO - validate_keyword_data:205 - 검증 중: 마우스 - 무선 마우스
+2025-08-04 11:15:42 - __main__ - INFO - validate_keyword_data:228 - 검증 완료: 무선 마우스 - 점수: 23/30
+2025-08-04 11:15:43 - __main__ - INFO - validate_keyword_data:205 - 검증 중: 마우스 - 인체공학적 디자인
+2025-08-04 11:16:50 - __main__ - INFO - <module>:275 - 엑셀 파일 읽기: item_info_keyword_v1.0.xlsx
+2025-08-04 11:16:50 - __main__ - INFO - validate_keyword_data:182 - 키워드 데이터 검증 시작
+2025-08-04 11:16:50 - __main__ - INFO - validate_keyword_data:205 - 검증 중: 마우스 - 무선 마우스
+2025-08-04 11:17:30 - __main__ - ERROR - validate_keyword_with_gemini:130 - 검증 API 호출 오류 (시도 1/3): 'ValidationScore' object has no attribute 'keyword_description_match'
+2025-08-04 11:19:29 - __main__ - INFO - <module>:273 - 엑셀 파일 읽기: item_info_keyword_v1.0.xlsx
+2025-08-04 11:19:29 - __main__ - INFO - validate_keyword_data:180 - 키워드 데이터 검증 시작
+2025-08-04 11:19:29 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 마우스 - 무선 마우스
+2025-08-04 11:20:08 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 무선 마우스 - 점수: 13/30
+2025-08-04 11:20:09 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 마우스 - 인체공학적 디자인
+2025-08-04 11:20:37 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 인체공학적 디자인 - 점수: 13/30
+2025-08-04 11:20:38 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 마우스 - 게이밍 마우스
+2025-08-04 11:21:19 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 게이밍 마우스 - 점수: 13/30
+2025-08-04 11:21:20 - __main__ - INFO - validate_keyword_data:241 - 검증 결과 저장 완료: validation_results.xlsx
+2025-08-04 11:21:20 - __main__ - INFO - validate_keyword_data:248 - 검증 완료 - 총 3개 항목
+2025-08-04 11:21:20 - __main__ - INFO - validate_keyword_data:249 - 유효 항목: 0개 (0.0%)
+2025-08-04 11:21:20 - __main__ - INFO - validate_keyword_data:250 - 평균 점수: 13.0/30
+2025-08-04 11:23:15 - __main__ - INFO - <module>:273 - 엑셀 파일 읽기: item_info_keyword_v1.0.xlsx
+2025-08-04 11:23:15 - __main__ - INFO - validate_keyword_data:180 - 키워드 데이터 검증 시작
+2025-08-04 11:23:15 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 노트북 - TFT LCD
+2025-08-04 11:23:44 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: TFT LCD - 점수: 0/30
+2025-08-04 11:23:45 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 노트북 - XGA
+2025-08-04 11:23:59 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: XGA - 점수: 0/30
+2025-08-04 11:24:00 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 노트북 - 노트북 PC 보급률
+2025-08-04 11:24:17 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 노트북 PC 보급률 - 점수: 0/30
+2025-08-04 11:24:18 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 마우스 - 무선 마우스
+2025-08-04 11:24:54 - __main__ - ERROR - parse_validation_response:173 - 검증 응답 파싱 오류: 1 validation error for ValidationScore
+validation_details
+  Input should be a valid string [type=string_type, input_value={'url_accessibility': 'Th...d its description. [1]"}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-08-04 11:24:54 - __main__ - ERROR - validate_keyword_with_gemini:129 - 검증 API 호출 오류 (시도 1/3): 1 validation error for ValidationScore
+validation_details
+  Input should be a valid string [type=string_type, input_value={'url_accessibility': 'Th...d its description. [1]"}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-08-04 11:25:39 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 무선 마우스 - 점수: 13/30
+2025-08-04 11:25:40 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 마우스 - 인체공학적 디자인
+2025-08-04 11:26:16 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 인체공학적 디자인 - 점수: 13/30
+2025-08-04 11:26:17 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 마우스 - 게이밍 마우스
+2025-08-04 11:26:47 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 게이밍 마우스 - 점수: 13/30
+2025-08-04 11:26:48 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 프린터 - 3D 프린팅
+2025-08-04 11:27:13 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 3D 프린팅 - 점수: 0/30
+2025-08-04 11:27:14 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 프린터 - 4D 프린팅
+2025-08-04 11:27:30 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 4D 프린팅 - 점수: 0/30
+2025-08-04 11:27:31 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 프린터 - 3D 푸드 프린팅
+2025-08-04 11:27:50 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 3D 푸드 프린팅 - 점수: 0/30
+2025-08-04 11:27:51 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 창문형 에어컨 - 창문형 에어컨
+2025-08-04 11:28:07 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 창문형 에어컨 - 점수: 0/30
+2025-08-04 11:28:08 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 창문형 에어컨 - 에너지소비효율 1등급
+2025-08-04 11:28:39 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 에너지소비효율 1등급 - 점수: 0/30
+2025-08-04 11:28:40 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 창문형 에어컨 - 1인 가구
+2025-08-04 11:29:01 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 1인 가구 - 점수: 0/30
+2025-08-04 11:29:02 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 다리미 - 가정용 전기 다리미
+2025-08-04 11:29:27 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 가정용 전기 다리미 - 점수: 13/30
+2025-08-04 11:29:28 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 다리미 - 스팀 전기 다리미
+2025-08-04 11:30:04 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 스팀 전기 다리미 - 점수: 13/30
+2025-08-04 11:30:05 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 다리미 - 중국 전기 다리미 시장
+2025-08-04 11:30:34 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 중국 전기 다리미 시장 - 점수: 13/30
+2025-08-04 11:30:35 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 물걸레청소기 - 청소성능 (Cleaning Performance)
+2025-08-04 11:30:49 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 청소성능 (Cleaning Performance) - 점수: 0/30
+2025-08-04 11:30:50 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 물걸레청소기 - 소음 (Noise)
+2025-08-04 11:31:22 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 소음 (Noise) - 점수: 0/30
+2025-08-04 11:31:23 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 물걸레청소기 - 사용시간 (Usage Time)
+2025-08-04 11:31:47 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 사용시간 (Usage Time) - 점수: 0/30
+2025-08-04 11:31:48 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 세탁기 - 스마트 세탁기
+2025-08-04 11:32:16 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 스마트 세탁기 - 점수: 0/30
+2025-08-04 11:32:17 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 세탁기 - 에너지 효율
+2025-08-04 11:32:41 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 에너지 효율 - 점수: 0/30
+2025-08-04 11:32:42 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 세탁기 - 사물 인터넷(IoT)
+2025-08-04 11:33:03 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 사물 인터넷(IoT) - 점수: 0/30
+2025-08-04 11:33:04 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 전기장판 - 전자파 인체보호기준
+2025-08-04 11:33:31 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 전자파 인체보호기준 - 점수: 0/30
+2025-08-04 11:33:32 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 전기장판 - 온도 균일성
+2025-08-04 11:34:02 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 온도 균일성 - 점수: 0/30
+2025-08-04 11:34:03 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 전기장판 - 소비전력량
+2025-08-04 11:34:34 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 소비전력량 - 점수: 0/30
+2025-08-04 11:34:35 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 블루투스 스피커 - LE 오디오
+2025-08-04 11:35:03 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: LE 오디오 - 점수: 0/30
+2025-08-04 11:35:04 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 블루투스 스피커 - 블루투스 오디오 공유
+2025-08-04 11:35:23 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 블루투스 오디오 공유 - 점수: 0/30
+2025-08-04 11:35:24 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 블루투스 스피커 - 블루투스 메시 네트워킹
+2025-08-04 11:35:48 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 블루투스 메시 네트워킹 - 점수: 0/30
+2025-08-04 11:35:49 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 에어프라이어 - 디지털 에어프라이어
+2025-08-04 11:36:12 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 디지털 에어프라이어 - 점수: 20/30
+2025-08-04 11:36:13 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 에어프라이어 - 건강 의식
+2025-08-04 11:36:39 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 건강 의식 - 점수: 20/30
+2025-08-04 11:36:40 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 에어프라이어 - 아시아 태평양 시장
+2025-08-04 11:37:02 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 아시아 태평양 시장 - 점수: 20/30
+2025-08-04 11:37:03 - __main__ - INFO - validate_keyword_data:241 - 검증 결과 저장 완료: validation_results.xlsx
+2025-08-04 11:37:03 - __main__ - INFO - validate_keyword_data:248 - 검증 완료 - 총 30개 항목
+2025-08-04 11:37:03 - __main__ - INFO - validate_keyword_data:249 - 유효 항목: 0개 (0.0%)
+2025-08-04 11:37:03 - __main__ - INFO - validate_keyword_data:250 - 평균 점수: 4.6/30
+2025-08-04 11:51:51 - __main__ - INFO - <module>:273 - 엑셀 파일 읽기: item_info_keyword_v1.0.xlsx
+2025-08-04 11:51:51 - __main__ - INFO - validate_keyword_data:180 - 키워드 데이터 검증 시작
+2025-08-04 11:51:51 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 휴대용게임기 - 핸드헬드(Handheld)
+2025-08-04 11:52:30 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 핸드헬드(Handheld) - 점수: 10/20
+2025-08-04 11:52:31 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 휴대용게임기 - UMPC(Ultra Mobile Personal Computer)
+2025-08-04 11:53:04 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: UMPC(Ultra Mobile Personal Computer) - 점수: 10/20
+2025-08-04 11:53:05 - __main__ - INFO - validate_keyword_data:203 - 검증 중: 휴대용게임기 - 닌텐도 스위치(Nintendo Switch)
+2025-08-04 11:53:39 - __main__ - INFO - validate_keyword_data:226 - 검증 완료: 닌텐도 스위치(Nintendo Switch) - 점수: 10/20
+2025-08-04 11:53:40 - __main__ - INFO - validate_keyword_data:241 - 검증 결과 저장 완료: validation_results.xlsx
+2025-08-04 11:53:40 - __main__ - INFO - validate_keyword_data:248 - 검증 완료 - 총 3개 항목
+2025-08-04 11:53:40 - __main__ - INFO - validate_keyword_data:249 - 유효 항목: 0개 (0.0%)
+2025-08-04 11:53:40 - __main__ - INFO - validate_keyword_data:250 - 평균 점수: 10.0/30
+2025-08-04 11:58:40 - __main__ - INFO - <module>:288 - 엑셀 파일 읽기: item_info_keyword_v1.0.xlsx
+2025-08-04 11:58:40 - __main__ - INFO - validate_keyword_data:195 - 키워드 데이터 검증 시작
+2025-08-04 11:58:40 - __main__ - INFO - validate_keyword_data:218 - 검증 중: 휴대폰 - 스마트폰 보유율
+2025-08-04 11:59:04 - __main__ - INFO - validate_keyword_data:241 - 검증 완료: 스마트폰 보유율 - 점수: 12/20
+2025-08-04 11:59:05 - __main__ - INFO - validate_keyword_data:218 - 검증 중: 휴대폰 - 일상생활 필수매체
+2025-08-04 11:59:37 - __main__ - INFO - validate_keyword_data:241 - 검증 완료: 일상생활 필수매체 - 점수: 12/20
+2025-08-04 11:59:38 - __main__ - INFO - validate_keyword_data:218 - 검증 중: 휴대폰 - 온라인 동영상 서비스(OTT) 이용률
+2025-08-04 12:00:14 - __main__ - INFO - validate_keyword_data:241 - 검증 완료: 온라인 동영상 서비스(OTT) 이용률 - 점수: 13/20
+2025-08-04 12:00:15 - __main__ - INFO - validate_keyword_data:256 - 검증 결과 저장 완료: validation_results.xlsx
+2025-08-04 12:00:15 - __main__ - INFO - validate_keyword_data:263 - 검증 완료 - 총 3개 항목
+2025-08-04 12:00:15 - __main__ - INFO - validate_keyword_data:264 - 유효 항목: 0개 (0.0%)
+2025-08-04 12:00:15 - __main__ - INFO - validate_keyword_data:265 - 평균 점수: 12.3/30
+2025-08-04 12:00:53 - __main__ - INFO - <module>:288 - 엑셀 파일 읽기: item_info_keyword_v1.0.xlsx
+2025-08-04 12:00:53 - __main__ - INFO - validate_keyword_data:195 - 키워드 데이터 검증 시작
+2025-08-04 12:00:53 - __main__ - INFO - validate_keyword_data:218 - 검증 중: 스마트 플러그 - 스마트 플러그 시장
+2025-08-04 12:01:28 - __main__ - INFO - validate_keyword_data:241 - 검증 완료: 스마트 플러그 시장 - 점수: 20/20
+2025-08-04 12:01:29 - __main__ - INFO - validate_keyword_data:218 - 검증 중: 스마트 플러그 - 북미
+2025-08-04 12:02:14 - __main__ - INFO - validate_keyword_data:241 - 검증 완료: 북미 - 점수: 20/20
+2025-08-04 12:02:15 - __main__ - INFO - validate_keyword_data:218 - 검증 중: 스마트 플러그 - 아시아 태평양
+2025-08-04 12:02:44 - __main__ - INFO - validate_keyword_data:241 - 검증 완료: 아시아 태평양 - 점수: 20/20
+2025-08-04 12:02:45 - __main__ - INFO - validate_keyword_data:256 - 검증 결과 저장 완료: validation_results.xlsx
+2025-08-04 12:02:45 - __main__ - INFO - validate_keyword_data:263 - 검증 완료 - 총 3개 항목
+2025-08-04 12:02:45 - __main__ - INFO - validate_keyword_data:264 - 유효 항목: 3개 (100.0%)
+2025-08-04 12:02:45 - __main__ - INFO - validate_keyword_data:265 - 평균 점수: 20.0/30
